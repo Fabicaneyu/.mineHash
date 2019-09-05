@@ -1,0 +1,86 @@
+
+.navbar {
+  font-size: 2.5vh;
+  width: 100%;
+}
+
+.menu-list {
+  display: flex;
+  justify-content: flex-start;
+  margin: 0;
+  background: black;
+  color: white;
+}
+
+.list-item {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+  margin: 0;
+  padding: 10px;
+}
+
+.list-item:hover, .item-active {
+  background-color: darkblue;
+}
+
+/* https://www.w3schools.com/w3css/w3css_slideshow.asp */
+.slideshow {
+  display: flex;
+  background-color: purple;
+  width: 100%;
+  height: 70vh;
+}
+
+.sect {
+  display: flex;
+  font-size: 4vh;
+  width: 100%;
+  height: 100vh;
+  background-color: red;
+  margin: 0 0 5px 0;  /* NOTE: Retire esta linha quando terminar cada section */
+}
+
+.sect-about, .sect-services, .sect-whoareus, .sect-freetest {
+  flex-direction: column;
+}
+
+.sect-title {
+  font-size: 6vh;
+  align-self: center;
+  margin: 10px 0 0 0;
+}
+
+.sect-about {
+  align-items: center;
+}
+
+.about-content {
+  margin: 0 20vw;
+}
+
+.services-list {
+  width: 98%;
+  height: 100%;
+  background-color: purple;
+  display: flex;
+  align-self: center;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 20px 0;
+}
+
+.item-service {
+  width: 400px;
+  height: 90%;
+  background-color: yellow;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.is-title, .is-content {
+  margin: 5px;
+}
