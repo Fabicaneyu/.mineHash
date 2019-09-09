@@ -387,11 +387,11 @@ body>.navbar-collapse a {
 }
 
 .avatar-danger {
-    border-color: #e78b90;
+    border-color: #0486E9;
 }
 
 *::selection {
-    background: #e78b90;
+    background: #0486E9;
     color: #FFFFFF;
 }
 
@@ -1133,6 +1133,7 @@ fieldset[disabled] .form-control {
     margin: 0 auto 70px;
     display: block;
     padding: 0 15px;
+    padding-bottom: 15px;
     text-align: center;
 }
 
