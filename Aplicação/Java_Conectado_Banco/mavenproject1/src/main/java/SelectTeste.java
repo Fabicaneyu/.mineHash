@@ -28,11 +28,11 @@ public class SelectTeste {
         CPU inserir = new CPU();
         inserir.EnviarBanco();// objeto 'inserir' executa o método EnviarBanco() que insere dados
 
-        CPU deletar = new CPU();
-        deletar.DeletarBanco();// objeto 'deletar' executa o método DeletarBanco() que deleta dados
-
-        CPU alterar = new CPU();
-        alterar.ModificarBanco();// objeto 'alterar' executa o método ModificarBanco que altera dados
+//        CPU deletar = new CPU();
+//        deletar.DeletarBanco();// objeto 'deletar' executa o método DeletarBanco() que deleta dados
+//
+//        CPU alterar = new CPU();
+//        alterar.ModificarBanco();// objeto 'alterar' executa o método ModificarBanco que altera dados
 
         System.out.println(conectar.template().queryForList("select * from tb_teste"));
         // essa linha foi feita apenas pra exibir os dados da tabela após execução dos métodos

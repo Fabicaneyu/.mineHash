@@ -9,8 +9,8 @@
  */
 public class CPU {
     // alterar os atributos e os métodos(insert, update, etc) de acordo com o banco
-    private String nome = "teste";
-    private String sobrenome = "teste";
+    private String nome = "Marcelo";
+    private String sobrenome = "Lixo";
 
     public void EnviarBanco() {
         ConexaoBDFuncional insert = new ConexaoBDFuncional();
@@ -20,19 +20,19 @@ public class CPU {
                         + "values (?,?)", nome, sobrenome);
     }
     
-    public void DeletarBanco() {
-        ConexaoBDFuncional delete = new ConexaoBDFuncional();
-        delete.getConnection();
-        delete.template().update("delete from tb_teste where id_teste = 2");    
-        
-    }
+//    public void DeletarBanco() {
+//        ConexaoBDFuncional delete = new ConexaoBDFuncional();
+//        delete.getConnection();
+//        delete.template().update("delete from tb_teste where id_teste = 2");    
+//        
+//    }
     
-    public void ModificarBanco() {
-        ConexaoBDFuncional update = new ConexaoBDFuncional();
-        update.getConnection();
-        update.template().update("update tb_teste set nome = 'mineHash' where id_teste = 3");
-        
-    }
+//    public void ModificarBanco() {
+//        ConexaoBDFuncional update = new ConexaoBDFuncional();
+//        update.getConnection();
+//        update.template().update("update tb_teste set nome = 'mineHash' where id_teste = 3");
+//        
+//    }
    
         
 
