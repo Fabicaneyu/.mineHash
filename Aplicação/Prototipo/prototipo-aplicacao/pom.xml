@@ -55,6 +55,14 @@
             <artifactId>oshi-core</artifactId>
             <version>3.13.3</version>
         </dependency>
+        
+        <dependency>
+            <groupId>com.twilio.sdk</groupId>
+            <artifactId>twilio</artifactId>
+            <version>7.1.0</version>
+            <scope>compile</scope>
+        </dependency>
+        
 
 
     </dependencies>

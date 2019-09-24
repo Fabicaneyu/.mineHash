@@ -27,7 +27,6 @@ public class PrototipoAplicacao {
 
     public String Fabricante() {
         fabricante = hal.getComputerSystem().getManufacturer();
-      
         return fabricante;
 
     }
@@ -48,8 +47,8 @@ public class PrototipoAplicacao {
         return memoriaTotal;
 
     }
-    
-     public String MemoriaDisp() {
+
+    public String MemoriaDisp() {
         memoriaDisp = FormatUtil.formatBytes(hal.getMemory().getAvailable());
         return memoriaDisp;
 

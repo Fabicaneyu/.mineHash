@@ -15,9 +15,12 @@ public class BancoFuncional {
         ConexaoBanco conectar = new ConexaoBanco();
         conectar.getConnection();
 
-       Dados inserir = new Dados();
-       inserir.EnviarBanco();
-       
+        Dados inserir = new Dados();
+        inserir.EnviarBanco();
+        
+        MandarSMS relatorio = new MandarSMS();
+        relatorio.EnviarSMS();
+        
 
         System.out.println(conectar.template().queryForList("select * from Computador"));
 

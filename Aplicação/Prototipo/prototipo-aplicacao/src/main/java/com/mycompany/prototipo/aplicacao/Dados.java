@@ -4,8 +4,8 @@ public class Dados {
 
     PrototipoAplicacao dadosApp = new PrototipoAplicacao();
     ConexaoBanco insert = new ConexaoBanco();
-    private String nome = "Marcelo";
-    private String sobrenome = "Lixo";
+//    private String nome = "Marcelo";
+//    private String sobrenome = "Lixo";
 
     public void EnviarBanco() {
         insert.getConnection();
@@ -13,6 +13,6 @@ public class Dados {
                 "insert into Computador (fabricante,modelo,processador,memoriaTotal,memoriaDisp) "
                 + "values (?,?,?,?,?)", dadosApp.Fabricante(), dadosApp.Modelo(),
                 dadosApp.Processador(), dadosApp.MemoriaTotal(), dadosApp.MemoriaDisp());
-                
+
     }
 }
