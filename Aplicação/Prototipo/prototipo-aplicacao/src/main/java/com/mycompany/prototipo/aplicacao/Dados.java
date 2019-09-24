@@ -10,9 +10,11 @@ public class Dados {
     public void EnviarBanco() {
         insert.getConnection();
         insert.template().update(
-                "insert into Computador (fabricante,modelo,processador,memoriaTotal,memoriaDisp) "
-                + "values (?,?,?,?,?)", dadosApp.Fabricante(), dadosApp.Modelo(),
-                dadosApp.Processador(), dadosApp.MemoriaTotal(), dadosApp.MemoriaDisp());
+                "insert into Computador (hostname,fabricante,modelo,processador,memoriaTotal,memoriaDisp,"
+                + "sistemaOperacional) values (?,?,?,?,?,?,?)",
+                dadosApp.Hostmame(), dadosApp.Fabricante(), dadosApp.Modelo(),
+                dadosApp.Processador(), dadosApp.MemoriaTotal(), dadosApp.MemoriaDisp(),
+                dadosApp.SistemaOperacional());
 
     }
 }

@@ -19,38 +19,67 @@ public class PrototipoAplicacao {
     HardwareAbstractionLayer hal = si.getHardware();
     OperatingSystem os = si.getOperatingSystem();
 
+    String hostname;
     String fabricante;
     String modelo;
     String processador;
     String memoriaTotal;
     String memoriaDisp;
+    String sistemaOperacional;
+//    OperatingSystemVersion versaoSistema;
+
+    public String Hostmame() {
+
+        hostname = os.getNetworkParams().getHostName();
+        return hostname;
+
+    }
 
     public String Fabricante() {
+
         fabricante = hal.getComputerSystem().getManufacturer();
         return fabricante;
 
     }
 
     public String Modelo() {
+
         modelo = hal.getComputerSystem().getModel();
         return modelo;
+
     }
 
     public String Processador() {
+
         processador = hal.getProcessor().getName();
         return processador;
 
     }
 
     public String MemoriaTotal() {
+
         memoriaTotal = FormatUtil.formatBytes(hal.getMemory().getTotal());
         return memoriaTotal;
 
     }
 
     public String MemoriaDisp() {
+
         memoriaDisp = FormatUtil.formatBytes(hal.getMemory().getAvailable());
         return memoriaDisp;
 
     }
+
+    public String SistemaOperacional() {
+
+        sistemaOperacional = si.getOperatingSystem().getFamily();
+        return sistemaOperacional;
+
+    }
+
+//    public OperatingSystemVersion VersaoSistema() {
+//
+//        versaoSistema = si.getOperatingSystem().getVersion();
+//        return versaoSistema;
+//    }
 }

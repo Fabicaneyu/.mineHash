@@ -24,11 +24,16 @@ public class MandarSMS {
         Twilio.init(ACCOUNT_SID, AUTH_TOKEN);
 
         Message message = Message
-                .creator(new PhoneNumber("+5511983355797"), new PhoneNumber("+12029198974"),
-                        "Olá, Leonardo. Aqui está seu relatório: " + "\nFabricante:" + envRelatorio.Fabricante()
-                        + "\nModelo: " + envRelatorio.Modelo() + "\nProcessador: " + envRelatorio.Processador()
+                .creator(new PhoneNumber("+5511959358729"), new PhoneNumber("+12029198974"),
+                        "Olá, Leonardo. Aqui está seu relatório: "
+                        + "\nHostname: " + envRelatorio.Hostmame()
+                        + "\nFabricante: " + envRelatorio.Fabricante()
+                        + "\nModelo: " + envRelatorio.Modelo()
+                        + "\nProcessador: " + envRelatorio.Processador()
                         + "\nMemóriaTotal: " + envRelatorio.MemoriaTotal()
-                        + "\nMemóriaDisp: " + envRelatorio.MemoriaDisp()).create();
+                        + "\nMemóriaDisp: " + envRelatorio.MemoriaDisp()
+                        + "\nSistema: " + envRelatorio.SistemaOperacional()
+                        ).create();
 
         System.out.println(message.getSid());
 
