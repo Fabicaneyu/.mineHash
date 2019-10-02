@@ -19,20 +19,20 @@ public class MandarSMS {
     public static final String ACCOUNT_SID = "AC5e0e8b7e2338d814b71e30e5865c8f89";
     public static final String AUTH_TOKEN = "7be2acb0d707e69352bcd23d6480a56d";
 
-    public void EnviarSMS() {
+    public void enviarSMS() {
 
         Twilio.init(ACCOUNT_SID, AUTH_TOKEN);
 
         Message message = Message
                 .creator(new PhoneNumber("+5511959358729"), new PhoneNumber("+12029198974"),
                         "Olá, Leonardo. Aqui está seu relatório: "
-                        + "\nHostname: " + envRelatorio.Hostmame()
-                        + "\nFabricante: " + envRelatorio.Fabricante()
-                        + "\nModelo: " + envRelatorio.Modelo()
-                        + "\nProcessador: " + envRelatorio.Processador()
-                        + "\nMemóriaTotal: " + envRelatorio.MemoriaTotal()
-                        + "\nMemóriaDisp: " + envRelatorio.MemoriaDisp()
-                        + "\nSistema: " + envRelatorio.SistemaOperacional()
+                        + "\nHostname: " + envRelatorio.hostname()
+                        + "\nFabricante: " + envRelatorio.fabricante()
+                        + "\nModelo: " + envRelatorio.modelo()
+                        + "\nProcessador: " + envRelatorio.processador()
+                        + "\nMemóriaTotal: " + envRelatorio.memoriaTotal()
+                        + "\nMemóriaDisp: " + envRelatorio.memoriaDisp()
+                        + "\nSistema: " + envRelatorio.sistemaOperacional()
                         ).create();
 
         System.out.println(message.getSid());

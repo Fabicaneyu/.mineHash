@@ -14,6 +14,4 @@ sistemaOperacional varchar(40)
 
 
 select * from Computador;
-
-
-
+drop table Computador;

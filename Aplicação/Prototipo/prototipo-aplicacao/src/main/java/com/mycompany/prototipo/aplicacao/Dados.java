@@ -7,14 +7,14 @@ public class Dados {
 //    private String nome = "Marcelo";
 //    private String sobrenome = "Lixo";
 
-    public void EnviarBanco() {
+    public void enviarBanco() {
         insert.getConnection();
         insert.template().update(
                 "insert into Computador (hostname,fabricante,modelo,processador,memoriaTotal,memoriaDisp,"
                 + "sistemaOperacional) values (?,?,?,?,?,?,?)",
-                dadosApp.Hostmame(), dadosApp.Fabricante(), dadosApp.Modelo(),
-                dadosApp.Processador(), dadosApp.MemoriaTotal(), dadosApp.MemoriaDisp(),
-                dadosApp.SistemaOperacional());
+                dadosApp.hostname(), dadosApp.fabricante(), dadosApp.modelo(),
+                dadosApp.processador(), dadosApp.memoriaTotal(), dadosApp.memoriaDisp(),
+                dadosApp.sistemaOperacional());
 
     }
 }

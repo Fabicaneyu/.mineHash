@@ -5,7 +5,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 
 public class ConexaoBanco {
 
-    private BasicDataSource con = new BasicDataSource();
+    private BasicDataSource conexao = new BasicDataSource();
 
     public BasicDataSource getConnection() {
 
@@ -16,19 +16,19 @@ public class ConexaoBanco {
 //                    + "database=mineHash;user=fabi_canedo@01191065;password=Mavibifa2019;"
 //                    + "encrypt=true;trustServerCertificate=false;"
 //                    + "hostNameInCertificate=*.database.windows.net;loginTimeout=30;");
-            con.setDriverClassName("com.mysql.cj.jdbc.Driver");
-            con.setUrl("jdbc:mysql://localhost:3306/teste_oshi?useTimezone=true&serverTimezone=UTC");
-            con.setUsername("root");
-            con.setPassword("Leo5767482200");
+            conexao.setDriverClassName("com.mysql.cj.jdbc.Driver");
+            conexao.setUrl("jdbc:mysql://localhost:3306/teste_oshi?useTimezone=true&serverTimezone=UTC");
+            conexao.setUsername("root");
+            conexao.setPassword("Leo5767482200");
 
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return con;
+        return conexao;
     }
 
     public JdbcTemplate template() {
-        JdbcTemplate jdbcTemplate = new JdbcTemplate(con);
+        JdbcTemplate jdbcTemplate = new JdbcTemplate(conexao);
         return jdbcTemplate;
     }
 }

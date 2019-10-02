@@ -7,11 +7,13 @@ package com.mycompany.prototipo.aplicacao;
 
 //import org.slf4j.Logger;
 //import org.slf4j.LoggerFactory;
+import com.profesorfalken.jsensors.JSensors;
 import oshi.SystemInfo;
 import oshi.hardware.*;
-
 import oshi.software.os.*;
 import oshi.util.FormatUtil;
+//import com.profesorfalken.jsensors.model.components.Components;
+//import com.profesorfalken.jsensors.model.components.Gpu;
 
 public class PrototipoAplicacao {
 
@@ -26,57 +28,72 @@ public class PrototipoAplicacao {
     String memoriaTotal;
     String memoriaDisp;
     String sistemaOperacional;
-//    OperatingSystemVersion versaoSistema;
+    String processoCaminho;
+    String nomeProcesso;
 
-    public String Hostmame() {
+    public String hostname() {
 
         hostname = os.getNetworkParams().getHostName();
         return hostname;
 
     }
 
-    public String Fabricante() {
+    public String fabricante() {
 
         fabricante = hal.getComputerSystem().getManufacturer();
         return fabricante;
 
     }
 
-    public String Modelo() {
+    public String modelo() {
 
         modelo = hal.getComputerSystem().getModel();
         return modelo;
 
     }
 
-    public String Processador() {
+    public String processador() {
 
         processador = hal.getProcessor().getName();
         return processador;
 
     }
 
-    public String MemoriaTotal() {
+    public String memoriaTotal() {
 
         memoriaTotal = FormatUtil.formatBytes(hal.getMemory().getTotal());
         return memoriaTotal;
 
     }
 
-    public String MemoriaDisp() {
+    public String memoriaDisp() {
 
         memoriaDisp = FormatUtil.formatBytes(hal.getMemory().getAvailable());
         return memoriaDisp;
 
     }
 
-    public String SistemaOperacional() {
+    public String sistemaOperacional() {
 
         sistemaOperacional = si.getOperatingSystem().getFamily();
         return sistemaOperacional;
 
     }
 
+    public String caminhoProcesso() {
+        
+        processoCaminho = os.getProcess(452).getPath().toString();
+        return processoCaminho;
+        
+    }
+    
+    public String nomeProcesso() {
+        
+        nomeProcesso = os.getProcess(452).getName().toString();
+        return nomeProcesso;
+        
+    }
+//    
 //    public OperatingSystemVersion VersaoSistema() {
 //
 //        versaoSistema = si.getOperatingSystem().getVersion();
