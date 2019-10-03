@@ -5,12 +5,20 @@
  */
 package loginswing;
 
+import java.awt.Color;
+import java.awt.Point;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
+
+
 /**
  *
  * @author gsramos
  */
 public class Login extends javax.swing.JFrame {
-
+   private Point point = new Point();
     /**
      * Creates new form Login
      */
@@ -31,11 +39,13 @@ public class Login extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
-        tfLogin = new javax.swing.JTextField();
-        tfSenha = new javax.swing.JTextField();
-        btLogin = new javax.swing.JButton();
+        tfLogin = new loginswing.JTextFieldHint(new JTextField(),"user-icon","Nome de Usuário");
+        ;
+        tfSenha = new JPassWordFieldHint(new JPasswordField(),"padlock", "senha");
+        ;
         btSenha = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
+        btLogin = new javax.swing.JButton();
 
         jButton3.setText("jButton3");
 
@@ -44,6 +54,19 @@ public class Login extends javax.swing.JFrame {
         setUndecorated(true);
         setResizable(false);
         setSize(new java.awt.Dimension(400, 410));
+        addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseDragged(java.awt.event.MouseEvent evt) {
+                formMouseDragged(evt);
+            }
+        });
+        addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                formMouseClicked(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                formMousePressed(evt);
+            }
+        });
 
         jPanel1.setBackground(new java.awt.Color(17, 63, 64));
         jPanel1.setToolTipText("");
@@ -69,15 +92,11 @@ public class Login extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
 
-        btLogin.setBackground(new java.awt.Color(10, 13, 14));
-        btLogin.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        btLogin.setForeground(new java.awt.Color(255, 255, 255));
-        btLogin.setText("entrar");
-        btLogin.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btLoginActionPerformed(evt);
-            }
-        });
+        tfLogin.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        tfLogin.setForeground(new java.awt.Color(204, 204, 204));
+
+        tfSenha.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        tfSenha.setForeground(new java.awt.Color(204, 204, 204));
 
         btSenha.setBackground(new java.awt.Color(189, 126, 5));
         btSenha.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -92,6 +111,24 @@ public class Login extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabel2.setText("Login");
 
+        btLogin.setBackground(new java.awt.Color(10, 13, 13));
+        btLogin.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btLogin.setForeground(new java.awt.Color(255, 255, 255));
+        btLogin.setText("Entrar");
+        btLogin.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btLoginMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btLoginMouseExited(evt);
+            }
+        });
+        btLogin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btLoginActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -101,11 +138,11 @@ public class Login extends javax.swing.JFrame {
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(31, 31, 31)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                            .addComponent(btLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 360, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(btSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 360, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                 .addComponent(tfSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 360, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(tfLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 360, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addComponent(tfLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 360, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(btLogin, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(180, 180, 180)
                         .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -144,14 +181,59 @@ public class Login extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSenhaActionPerformed
         System.exit(0);
     }//GEN-LAST:event_btSenhaActionPerformed
 
+    private void btLoginMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btLoginMouseEntered
+        btLogin.setBackground(new Color(17,63,64) );
+    }//GEN-LAST:event_btLoginMouseEntered
+
+    private void btLoginMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btLoginMouseExited
+        btLogin.setBackground(new Color(5,13,14) );
+    }//GEN-LAST:event_btLoginMouseExited
+
+    private void formMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMouseClicked
+     
+    }//GEN-LAST:event_formMouseClicked
+
+    private void formMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMousePressed
+       point.x = evt.getX();
+       point.y = evt.getY();
+    }//GEN-LAST:event_formMousePressed
+
+    private void formMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMouseDragged
+        Point p = this.getLocation();
+        this.setLocation(p.x + evt.getX() - point.x,p.y + evt.getY() - point.y);
+    }//GEN-LAST:event_formMouseDragged
+
     private void btLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btLoginActionPerformed
-        // TODO add your handling code here:
+       Point p = this.getLocation();
+       Login login = this; 
+        
+        new Thread(){
+            @Override
+            public void run() {
+                try{
+                for (int i = 0; i < 3; i++) {
+                    login.setLocation(p.x-5,p.y);
+                        sleep(20);
+                     login.setLocation(p.x+5,p.y);
+                        sleep(20);
+                    
+                    }
+                 login.setLocation(p.x,p.y);
+               } catch (InterruptedException ex) {
+                        Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                
+                
+            }
+            
+        }.start();
     }//GEN-LAST:event_btLoginActionPerformed
 
     /**
