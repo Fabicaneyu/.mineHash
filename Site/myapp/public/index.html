@@ -12,10 +12,10 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <link href='https://fonts.googleapis.com/css?family=Montserrat|Cardo' rel='stylesheet' type='text/css'>[
-    <script src="javascript/jQuery.min.js" ></script>
-    <script src="javascript/jquery-3.4.0.min.js" ></script>
-    
+    <link href='https://fonts.googleapis.com/css?family=Montserrat|Cardo' rel='stylesheet' type='text/css'>
+    <script src="javascript/jQuery.min.js"></script>
+    <script src="javascript/jquery-3.4.0.min.js"></script>
+
 
     <link href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -28,94 +28,133 @@
     <!--Navbar-->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top scrolling-navbar">
 
-            <div class="container">
+        <div class="container">
 
-                <!-- Navbar brand -->
-                <img src="img/HASH_LOGO.PNG" height="30px">
+            <!-- Navbar brand -->
+            <img src="img/HASH_LOGO.PNG" height="30px">
 
-                <!-- Collapse button -->
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
-                    aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
+            <!-- Collapse button -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav" aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
-                <!-- Collapsible content -->
-                <div class="collapse navbar-collapse" id="basicExampleNav">
+            <!-- Collapsible content -->
+            <div class="collapse navbar-collapse" id="basicExampleNav">
 
-                    <!-- Links -->
-                    <ul class="navbar-nav mr-auto smooth-scroll">
-                        <li class="nav-item">
-                            <a class="nav-link" href="#intro">A mineração</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#best-features">Serviços</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#examples">Quem Somos</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#gallery">Teste Grátis</a>
-                        </li>
-                    </ul>
-                    <!-- Links -->
+                <!-- Links -->
+                <ul class="navbar-nav mr-auto smooth-scroll">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#intro">A mineração</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#best-features">Serviços</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#examples">Quem Somos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#gallery">Teste Grátis</a>
+                    </li>
+                </ul>
+                <!-- Links -->
 
-                    <!-- Social Icon  -->
-                    <ul class="navbar-nav nav-flex-icons">
-                        <li class="nav-item">
-                            <a class="nav-link" href="#myModal" class="trigger-btn" data-toggle="modal">Login</a>
-                        </li>
-                    <!-- <li class="nav-item">
-                            <a class="nav-link"><i class="fab fa-facebook"></i></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link"><i class="fab fa-twitter"></i></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link"><i class="fab fa-instagram"></i></a>
-                        </li> -->
-                    </ul>
-                </div>
-                <!-- Collapsible content -->
+                <!-- Social Icon  -->
+                <ul class="navbar-nav nav-flex-icons">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#myModal" class="trigger-btn" data-toggle="modal">Registre-se</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#myModal2" class="trigger-btn" data-toggle="modal">login</a>
+                    </li>
+
+                </ul>
             </div>
-        </nav>
-        <!--/.Navbar-->
+            <!-- Collapsible content -->
+        </div>
+    </nav>
+    <!--/.Navbar-->
 
-        <!--Login Modal-->
-            
-            <!-- Modal HTML -->
-            <div id="myModal" class="modal fade">
-                <div class="modal-dialog modal-login">
-                    <div class="modal-content">
-                        <div class="modal-header">				
-                            <h4 class="modal-title">Login</h4>
-                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                        </div>
-                        <div class="modal-body">
-                            <form action="/examples/actions/confirmation.php" method="post">
-                                <div class="form-group">
-                                    <i class="fa fa-user"></i>
-                                    <input type="text" class="form-control" placeholder="Username" required="required">
-                                </div>
-                                <div class="form-group">
-                                    <i class="fa fa-lock"></i>
-                                    <input type="password" class="form-control" placeholder="Password" required="required">					
-                                </div>
-                                <div class="form-group">
-                                    <input type="submit" class="btn btn-primary btn-block btn-lg" value="Login">
-                                </div>
-                            </form>				
-                            
-                        </div>
-                        <div class="modal-footer">
-                            <a href="">Esqueceu a Senha?</a>
-                        </div>
-                    </div>
+    <!--Login Modal-->
+
+    <!-- Modal HTML -->
+    <div id="myModal" class="modal fade">
+        <div class="modal-dialog modal-login">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Login</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                 </div>
-            </div>     
-        <!--/.Login Modal-->
+                <div class="modal-body">
+                    <form action="/examples/actions/confirmation.php" method="post">
+                        <div class="form-group">
+                            <i class="fa fa-user"></i>
+                            <input type="text" class="form-control" placeholder="nome de usuario" required="required">
+                        </div>
 
-  
-                
+                        <div class="form-group">
+                            <i class="fa fa-at"></i>
+                            <input type="text" class="form-control" placeholder="email" required="required">
+                        </div>
+                        <div class="form-group">
+                            <i class="fa fa-at"></i>
+                            <input type="text" class="form-control" placeholder=" confirmar email" required="required">
+                        </div>
+                        <div class="form-group">
+                            <i class="fa fa-lock"></i>
+                            <input type="password" class="form-control" placeholder="senha" required="required">
+                        </div>
+                        <div class="form-group">
+                            <i class="fa fa-lock"></i>
+                            <input type="password" class="form-control" placeholder="confirmar senha" required="required">
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" class="btn btn-primary btn-block btn-lg" value="Registre-se">
+                        </div>
+                    </form>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!--/.Login Modal-->
+
+    <!-- registro modal -->
+
+    <div id="myModal2" class="modal fade">
+        <div class="modal-dialog modal-login">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Login</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <form action="/examples/actions/confirmation.php" method="post">
+                        <div class="form-group">
+                            <i class="fa fa-user"></i>
+                            <input type="text" class="form-control" placeholder="Username" required="required">
+                        </div>
+                        <div class="form-group">
+                            <i class="fa fa-lock"></i>
+                            <input type="password" class="form-control" placeholder="Password" required="required">
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" class="btn btn-primary btn-block btn-lg" value="Login">
+                        </div>
+                    </form>
+
+                </div>
+                <div class="modal-footer">
+                    <a href="">Esqueceu a Senha?</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- registro modal -->
+
+
+
+
 
 
     <!-- slider -->
