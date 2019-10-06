@@ -1,11 +1,11 @@
 package com.mycompany.prototipo.aplicacao;
 
-public class Dados {
+public class Dados extends CapturaDadosOshi {
 
     // vamos instanciar duas classes que serão necessárias para executar o envio
     // de dados ao banco
     
-    CapturaDadosOshi dadosAplicacao = new CapturaDadosOshi();
+    
     ConexaoBanco conexaoBanco = new ConexaoBanco();
 
     public void enviarDados() {
@@ -33,9 +33,8 @@ public class Dados {
         conexaoBanco.template().update(
                 "insert into Computador (hostname,fabricante,modelo,processador,memoriaTotal,memoriaDisp,"
                 + "sistemaOperacional) values (?,?,?,?,?,?,?)",
-                dadosAplicacao.getHostname(), dadosAplicacao.getFabricante(), dadosAplicacao.getModelo(),
-                dadosAplicacao.getProcessador(), dadosAplicacao.getMemoriaTotal(), dadosAplicacao.getMemoriaDisp(),
-                dadosAplicacao.getSistemaOperacional());
+                getHostname(), getFabricante(), getModelo(), getProcessador(),
+                getMemoriaTotal(), getMemoriaDisp(), getSistemaOperacional());
 
     }
 }

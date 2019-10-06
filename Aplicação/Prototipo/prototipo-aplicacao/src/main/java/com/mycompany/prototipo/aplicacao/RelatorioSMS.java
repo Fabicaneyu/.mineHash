@@ -12,9 +12,7 @@ import com.twilio.type.PhoneNumber;
 //import java.net.URI;
 //import java.math.BigDecimal;
 
-public class RelatorioSMS {
-
-    CapturaDadosOshi enviarRelatorio = new CapturaDadosOshi();
+public class RelatorioSMS extends CapturaDadosOshi{
 
     public static final String ACCOUNT_SID = "AC5e0e8b7e2338d814b71e30e5865c8f89";
     public static final String AUTH_TOKEN = "7be2acb0d707e69352bcd23d6480a56d";
@@ -26,13 +24,13 @@ public class RelatorioSMS {
         Message message = Message
                 .creator(new PhoneNumber("+5511959358729"), new PhoneNumber("+12029198974"),
                         "Olá, Leonardo. Aqui está seu relatório: "
-                        + "\nHostname: " + enviarRelatorio.getHostname()
-                        + "\nFabricante: " + enviarRelatorio.getFabricante()
-                        + "\nModelo: " + enviarRelatorio.getModelo()
-                        + "\nProcessador: " + enviarRelatorio.getProcessador()
-                        + "\nMemóriaTotal: " + enviarRelatorio.getMemoriaTotal()
-                        + "\nMemóriaDisp: " + enviarRelatorio.getMemoriaDisp()
-                        + "\nSistema: " + enviarRelatorio.getSistemaOperacional()
+                        + "\nHostname: " + getHostname()
+                        + "\nFabricante: " + getFabricante()
+                        + "\nModelo: " + getModelo()
+                        + "\nProcessador: " + getProcessador()
+                        + "\nMemóriaTotal: " + getMemoriaTotal()
+                        + "\nMemóriaDisp: " + getMemoriaDisp()
+                        + "\nSistema: " + getSistemaOperacional()
                 ).create();
 
         System.out.println(message.getSid());
