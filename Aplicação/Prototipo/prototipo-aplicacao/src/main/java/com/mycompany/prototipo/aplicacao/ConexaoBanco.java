@@ -6,8 +6,8 @@ import org.springframework.jdbc.core.JdbcTemplate;
 public class ConexaoBanco {
 
     private BasicDataSource conexao = new BasicDataSource();
-
-    public BasicDataSource getConnection() {
+    
+    public BasicDataSource montarConexao() { 
 
         try {
 //            con.setDriverClassName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
@@ -16,14 +16,27 @@ public class ConexaoBanco {
 //                    + "database=mineHash;user=fabi_canedo@01191065;password=Mavibifa2019;"
 //                    + "encrypt=true;trustServerCertificate=false;"
 //                    + "hostNameInCertificate=*.database.windows.net;loginTimeout=30;");
-            conexao.setDriverClassName("com.mysql.cj.jdbc.Driver");
+
+            // aqui definimos o driver do jdbc que estamos usando
+            conexao.setDriverClassName("com.mysql.cj.jdbc.Driver"); 
+          
+            // aqui definimos qual a URL (caminho) da nossa base de dados. No caso, como é local,
+            // puxamos a URL da nossa base do workbench :)
             conexao.setUrl("jdbc:mysql://localhost:3306/teste_oshi?useTimezone=true&serverTimezone=UTC");
+            
+            // aqui definimos o nome de usuário relacionado a nossa database local
             conexao.setUsername("root");
+            
+            // e por fim, definimos a senha para acesso da database
             conexao.setPassword("Leo5767482200");
 
         } catch (Exception e) {
             e.printStackTrace();
         }
+        
+        // aqui nós retornamos o valor da instância "conexao" que criamos lá em cima :)
+        // tudo isso dentro do montarConexao() 
+        
         return conexao;
     }
 
