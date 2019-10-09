@@ -14,15 +14,15 @@ public class BancoFuncional {
         System.out.println(teste.memoriaDisp());
         System.out.println(teste.caminhoProcesso());
         
-        ConexaoBanco conectar = new ConexaoBanco();
-        conectar.getConnection();
-
-        Dados inserir = new Dados();
-        inserir.enviarBanco();
-        
-        MandarSMS relatorio = new MandarSMS();
-        relatorio.enviarSMS();
-        System.out.println(conectar.template().queryForList("select * from Computador"));
+//        ConexaoBanco conectar = new ConexaoBanco();
+//        conectar.getConnection();
+//
+//        Dados inserir = new Dados();
+//        inserir.enviarBanco();
+//        
+//        MandarSMS relatorio = new MandarSMS();
+//        relatorio.enviarSMS();
+//        System.out.println(conectar.template().queryForList("select * from Computador"));
         
 
     }

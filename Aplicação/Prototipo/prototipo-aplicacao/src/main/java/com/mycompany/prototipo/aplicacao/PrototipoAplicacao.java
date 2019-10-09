@@ -7,7 +7,7 @@ package com.mycompany.prototipo.aplicacao;
 
 //import org.slf4j.Logger;
 //import org.slf4j.LoggerFactory;
-import com.profesorfalken.jsensors.JSensors;
+
 import oshi.SystemInfo;
 import oshi.hardware.*;
 import oshi.software.os.*;
