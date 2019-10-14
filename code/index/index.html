@@ -40,17 +40,18 @@
             <div class="collapse navbar-collapse">
                 <ul class="nav navbar-nav navbar-right navbar-uppercase">
                     <li>
-                        <a href="#" target="">Serviços</a>
+                        <a href="#monitorar" target="">por que monitorar? </a>
                     </li>
                     <li>
-                        <a href="#" target="">Sobre </a>
+                        <a href="#planos" target="">Serviços</a>
                     </li>
+
                     <li>
-                        <a href="#" target="">Quem somos?</a>
+                        <a href="#sobre" target="">Quem somos?</a>
                     </li>
                     <li class="dropdown">
                         <a href="#gaia" class="dropdown-toggle" data-toggle="dropdown">
-                            <i class="fa fa-share-alt"></i> Share
+                            <i class="fa fa-share-alt"></i> compartilhar
                         </a>
                         <ul class="dropdown-menu dropdown-danger">
                             <li>
@@ -65,18 +66,52 @@
                         </ul>
                     </li>
                     <li>
-                        <a class="btn btn-danger btn-fill">Login</a>
-                    </li>
-                </ul>
-            </div>
+                        <!-- Botão para acionar modal -->
+                        <button type="button" class="btn btn-danger btn-fill" data-toggle="modal" data-target="#modalExemplo">
+                             login
+                        </button>
+                        <!-- Modal -->
+                        <div class="modal fade" id="modalExemplo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">login</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                                            <span aria-hidden="true">&times;</span>
+                                            </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form>
+                                            <div class="form-group">
+                                                <label for="exampleInputEmail1">Endereço de email</label>
+                                                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Seu email">
+                                                <small id="emailHelp" class="form-text text-muted">Nunca vamos compartilhar seu email, com ninguém.</small>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="exampleInputPassword1">Senha</label>
+                                                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Senha">
 
-        </div>
+                                        </form>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                                            <button type="button" class="btn btn-danger btn-fill">logar</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                    </li>
+
+                </ul>
+                </div>
+
+            </div>
     </nav>
 
 
     <div class="section section-header">
         <div class="parallax filter ">
-            <div class="image" style="background-image: url('assets/img/header-1.PNG')">
+            <div class="image" style="background-image: url('assets/img/header-1.jpg')">
             </div>
             <div class="container">
                 <div class="content">
@@ -97,7 +132,7 @@
     </div>
 
 
-    <div class="section">
+    <div class="section" id="monitorar">
         <div class="container">
             <div class="row">
                 <div class="title-area">
@@ -139,9 +174,9 @@
     </div>
 
 
-    <div class="section section-our-team-freebie">
+    <div class="section section-our-team-freebie" id="planos">
         <div class="parallax filter filter-color-black">
-            <div class="image" style="background-image:url('assets/img/header-2.gif')">
+            <div class="image" style="background-image:url('assets/img/header-2.jpg')">
             </div>
             <div class="container">
                 <div class="content">
@@ -209,7 +244,7 @@
     </div>
 
 
-    <div class="section section-our-clients-freebie">
+    <div class="section section-our-clients-freebie" id="sobre">
         <div class="container">
             <div class="title-area">
                 <h5 class="subtitle text-gray">Conheca a</h5>
@@ -259,27 +294,27 @@
             <div class="tab-content">
                 <div class="tab-pane active" id="testimonial1">
                     <p class="description">
-                      Analista de Negócios / Product Owner
+                        Analista de Negócios / Product Owner
                     </p>
                 </div>
                 <div class="tab-pane" id="testimonial2">
                     <p class="description">
-                      Desenvolvedor Front-end / UI Designer
+                        Desenvolvedor Front-end / UI Designer
                     </p>
                 </div>
                 <div class="tab-pane" id="testimonial3">
                     <p class="description">
-                      Desenvolvedor Back-end
+                        Desenvolvedor Back-end
                     </p>
                 </div>
                 <div class="tab-pane" id="testimonial4">
                     <p class="description">
-                      Scrum Master / Product Owner
+                        Scrum Master / Product Owner
                     </p>
                 </div>
                 <div class="tab-pane" id="testimonial5">
                     <p class="description">
-                      Desenvolvedor Fullstack / UX Designer
+                        Desenvolvedor Fullstack / UX Designer
                     </p>
                 </div>
 
@@ -291,7 +326,7 @@
 
     <div class="section section-small section-get-started">
         <div class="parallax filter">
-            <div class="image" style="background-image: url('assets/img/circuito-1.gif')">
+            <div class="image" style="background-image: url('assets/img/header-3.jpg')">
             </div>
             <div class="container">
                 <div class="title-area">
@@ -336,14 +371,14 @@
                 </div>
                 <div class="col-md-3 col-md-offset-1 col-sm-3">
                     <div class="info">
-                        <h5 class="title"> Help and Support</h5>
+                        <h5 class="title"> Alguma dúvida?</h5>
                         <nav>
                             <ul>
                                 <li>
-                                    <a href="#">Contact Us</a>
+                                    <a href="#">Fale com a gente</a>
                                 </li>
                                 <li>
-                                    <a href="#">How it works</a>
+                                    <a href="#">Como funciona</a>
                                 </li>
                                 <li>
                                     <a href="#">Terms &amp; Conditions</a>
@@ -408,7 +443,7 @@
                 ©
                 <script>
                     document.write(new Date().getFullYear())
-                </script> Creative Tim, made with love
+                </script> MineHash,você minerando,a gente monitorando
             </div>
         </div>
     </footer>
