@@ -3,10 +3,10 @@ var desenvolvimento = false;
 
 var configuracoes = {
     producao: {
-        server: "testexyzwtrtwr.database.windows.net",
-        user: "adminbandtec",
-        password: "b@ndtec2018",
-        database: "gf2018",
+        server: "mineservidor.database.windows.net",
+        user: "minehash",
+        password: "Bandtec@2019",
+        database: "mineHash",
         options: {
             encrypt: true
         },

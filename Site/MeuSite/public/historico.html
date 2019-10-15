@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-br" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>mineHash - Dashboard do Colaborador</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <script src="https://kit.fontawesome.com/b40e41c797.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/dashboard.css">
+  </head>
+  <body>
+    <header class="dashboard-header">
+      <div class="header-logo">
+        <img class="header-img" src="./img/mineHash.png" alt="MineHash logo">
+      </div>
+      <div class="container header-search-bar">
+        <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="search" placeholder="Pesquisar" aria-label="Pesquisar">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="fas fa-search"></i></button>
+        </form>
+      </div>
+      <div class="container header-user">
+        <ul class="container user-actions">
+          <li class="user-action">
+            <a href="#notifications"><i class="fas fa-bell"></i></a>
+          </li>
+          <li class="user-action">
+            <a href="#messages"><i class="far fa-envelope"></i></a>
+          </li>
+          <li class="user-action">
+            <a href="#profile"><i class="fas fa-user"></i></a>
+          </li>
+        </ul>
+      </div>
+    </header>
+    <nav class="sidebar container nav-bar navbar-dark bg-dark">
+      <ul class="nav-items">
+        <li class="nav-item">
+          <a class="nav-button" href="./dashboard.html"><i class="fas fa-home"></i></a> <!-- Pagina inicial -->
+        </li>
+        <li class="nav-item">
+          <a class="nav-button" href="./historico.html"><i class="fas fa-history"></i></a> <!-- Histórico -->
+        </li>
+        <li class="nav-item">
+          <a class="nav-button" href="./pools.html"><i class="fas fa-users"></i></a> <!-- Pools -->
+        </li>
+      </ul>
+
+      <div class="nav-div"></div>
+
+      <ul class="nav-items">
+        <li class="nav-item">
+          <a class="nav-button" href="./configs.html"><i class="fas fa-cogs"></i></a> <!-- Configuracoes -->
+        </li>
+        <li class="nav-item">
+          <a class="nav-button" href=""><i class="far fa-question-circle"></i></a> <!-- Ajuda -->
+        </li>
+      </ul>
+    </nav>
+    <section class="container dash-page">
+      <!--  -->
+      <div class="shadow p-3 mb-5 bg-white rounded container">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">Data</th>
+              <th scope="col">Componente</th>
+              <th scope="col">Último Registro</th>
+              <th scope="col">Status</th>
+            </tr>
+          </thead>
+          <tbody class="hist-dados">
+          </tbody>
+        </table>
+      </div>
+
+    </section>
+  </body>
+</html>
+<script type="text/javascript">
+  for (let i = 0; i < 20; i++) {
+    const data = () => {
+      let dataA = Number(Math.random() * (6 - 1) + 1).toFixed(0);
+      let dataB = Number(Math.random() * (13 - 7) + 7).toFixed(0);
+      return `${dataA}/${dataB}`;
+    }
+    const componente = () => {
+      let comps = ['CPU', 'GPU', 'RAM', 'HDD/SSD'];
+      let sorteador = Number(Math.random() * (3 - 0) + 0).toFixed(0);
+      return `${comps[sorteador]}`;
+      //
+    }
+    const registro = () => {
+      let valorA = `${Number(Math.random() * (59 - 50) + 50).toFixed(2)}`;
+      let valorB = `${Number(Math.random() * (101 - 60) + 60).toFixed(2)}`;
+      return `${valorA} / ${valorB}%`;
+      //
+    }
+    const status = () => {
+      let comps = ['OK', 'Inativo', 'Indisponível', 'Crítico'];
+      let sorteador = Number(Math.random() * (3 - 0) + 0).toFixed(0);
+      return `${comps[sorteador]}`;
+      //
+    }
+
+     document.getElementsByClassName('hist-dados')[0].innerHTML += `<tr>
+      <th scope="row">${data()}</th>
+      <td>${componente()}</td>
+      <td>${registro()}</td>
+      <td>${status()}</td>
+    </tr>`;
+    //
+  }
+</script>
