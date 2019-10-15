@@ -1,17 +1,18 @@
 CREATE TABLE tb_minerador (
   id_minerador INT IDENTITY(1,1) PRIMARY KEY,
-  nm_minerador VARCHAR(255) NOT NULL,
-  data_nasci DATE NOT NULL,
-  nm_telefone NVARCHAR(2) NOT NULL,
+  nome VARCHAR(255) NOT NULL,
+  data_nasc DATE NOT NULL,
+  telefone NVARCHAR(2) NOT NULL,
   -- Endereço
   endereco_numero INT NOT NULL,
-  endereco_cep CHAR(8),
-  endereco_logradouro VARCHAR(16) NOT NULL,
+  cep CHAR(8),
+  logradouro VARCHAR(16) NOT NULL,
   endereco_nome VARCHAR(255) NOT NULL,
+  endereco_numero VARCHAR(65) NOT NULL,
   endereco_cidade VARCHAR(65) NOT NULL,
   endereco_bairro VARCHAR(65) NOT NULL,
   endereco as (
-    endereco_logradouro + ' ' + endereco_nome + ', ' + endereco_numero + ', '
+    logradouro + ' ' + endereco_nome + ', ' + endereco_numero + ', '
     + endereco_bairro + ', ' + endereco_cidade + ' - ' + endereco_cep
   ) -- Ex: Rua Edimar Fagundes Filho, 5023, São Paulo - 05232-792
 );

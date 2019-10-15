@@ -1,196 +1,588 @@
 <!DOCTYPE html>
-<html lang="pt" dir="ltr">
+<html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <title>.mineHash - Template</title>
-    <link rel="stylesheet" href="src/css/master.css">
-    <link rel="stylesheet" href="src/css/reset.css">
-    <link rel="stylesheet" href="/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/css/styles.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <link href='https://fonts.googleapis.com/css?family=Montserrat|Cardo' rel='stylesheet' type='text/css'>
+    <meta charset="utf-8" />
+    <link rel="apple-touch-icon" sizes="76x76" href="img/apple-icon.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="img/favicon.png">
 
-    <link href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round" rel="stylesheet">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>.MineHash</title>
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+    <link href="css/bootstrap.css" rel="stylesheet" />
+    <link href="css/gaia.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/estilo.css">
 
+    <!--     Fonts and icons     -->
+    <link href='https://fonts.googleapis.com/css?family=Cambo|Poppins:400,600' rel='stylesheet' type='text/css'>
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/fonts/pe-icon-7-stroke.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300i,400" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/e5b28b8596.js"></script>
 
 </head>
 
 <body>
 
-    <!--Navbar-->
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top scrolling-navbar">
-
-            <div class="container">
-
-                <!-- Navbar brand -->
-                <img src="img/HASH_LOGO.PNG" height="30px">
-
-                <!-- Collapse button -->
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
-                    aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
+    <nav class="navbar navbar-default navbar-transparent navbar-fixed-top" color-on-scroll="200">
+        <!-- if you want to keep the navbar hidden you can add this class to the navbar "navbar-burger"-->
+        <div class="container">
+            <div class="navbar-header">
+                <button id="menu-toggle" type="button" class="navbar-toggle" data-toggle="collapse"
+                    data-target="#example">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar bar1"></span>
+                    <span class="icon-bar bar2"></span>
+                    <span class="icon-bar bar3"></span>
                 </button>
-
-                <!-- Collapsible content -->
-                <div class="collapse navbar-collapse" id="basicExampleNav">
-
-                    <!-- Links -->
-                    <ul class="navbar-nav mr-auto smooth-scroll">
-                        <li class="nav-item">
-                            <a class="nav-link" href="#intro">A mineração</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#best-features">Serviços</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#examples">Quem Somos</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#gallery">Teste Grátis</a>
-                        </li>
-                    </ul>
-                    <!-- Links -->
-
-                    <!-- Social Icon  -->
-                    <ul class="navbar-nav nav-flex-icons">
-                        <li class="nav-item">
-                            <a class="nav-link" href="#myModal" class="trigger-btn" data-toggle="modal">Login</a>
-                        </li>
-                    <!-- <li class="nav-item">
-                            <a class="nav-link"><i class="fab fa-facebook"></i></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link"><i class="fab fa-twitter"></i></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link"><i class="fab fa-instagram"></i></a>
-                        </li> -->
-                    </ul>
-                </div>
-                <!-- Collapsible content -->
+                <a href="#" class="navbar-brand">
+                    .MineHash
+                </a>
             </div>
-        </nav>
-        <!--/.Navbar-->
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav navbar-right navbar-uppercase">
+                    <li>
+                        <a href="#monitorar" target="">Por que monitorar? </a>
+                    </li>
+                    <li>
+                        <a href="#planos" target="">Serviços</a>
+                    </li>
 
-        <!--Login Modal-->
-            
-            <!-- Modal HTML -->
-            <div id="myModal" class="modal fade">
-                <div class="modal-dialog modal-login">
-                    <div class="modal-content">
-                        <div class="modal-header">				
-                            <h4 class="modal-title">Login</h4>
-                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                        </div>
-                        <div class="modal-body">
-                            <form action="/examples/actions/confirmation.php" method="post">
-                                <div class="form-group">
-                                    <i class="fa fa-user"></i>
-                                    <input type="text" class="form-control" placeholder="Username" required="required">
+                    <li>
+                        <a href="#sobre" target="">Quem somos?</a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#gaia" class="dropdown-toggle" data-toggle="dropdown">
+                            <i class="fa fa-share-alt"></i> compartilhar
+                        </a>
+                        <ul class="dropdown-menu dropdown-danger">
+                            <li>
+                                <a href="#"><i class="fab fa-facebook-square"></i> Facebook</a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fab fa-twitter-square"></i> Twitter</a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fab fa-instagram"></i> Instagram</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <!-- Botão para acionar modal -->
+                        <button type="button" class="btn btn-danger btn-fill" data-toggle="modal"
+                            data-target="#modalLogin">
+                            Login
+                        </button>
+
+
+                        <!-- Modal LOGIN -->
+                        <div class="modal fade" id="modalLogin" tabindex="-1" role="dialog"
+                            aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel"
+                                            style="text-align: center; font-family:Arial, Helvetica, sans-serif;">
+                                            <b>Fazer login</b>
+                                        </h5>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form class="modal-login">
+                                            <div class="form-group">
+                                                <label for="exampleInputEmail1">Email</label><br>
+                                                <input type="email" class="form-control; input-login"
+                                                    id="exampleInputEmail1" aria-describedby="emailHelp"
+                                                    placeholder="Seu email">
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="exampleInputPassword1">Senha</label><br>
+                                                <input type="password" class="form-control; input-login"
+                                                    id="exampleInputPassword1" placeholder="Senha">
+                                            </div>
+
+                                        </form>
+                                    </div>
+                                    <div class="modal-footer; modal-botao">
+                                        <button type="button" class="btn btn-danger btn-fill" data-toggle="modal"
+                                            data-target="#modalCadastro">Cadastrar-se</button>
+                                        <button type="button" class="btn btn-danger btn-fill">Login</button><br>
+                                        <button type="button" class="btn btn-secondary"
+                                            data-dismiss="modal">Fechar</button>
+
+
+                                    </div>
                                 </div>
-                                <div class="form-group">
-                                    <i class="fa fa-lock"></i>
-                                    <input type="password" class="form-control" placeholder="Password" required="required">					
-                                </div>
-                                <div class="form-group">
-                                    <input type="submit" class="btn btn-primary btn-block btn-lg" value="Login">
-                                </div>
-                            </form>				
-                            
+                            </div>
                         </div>
-                        <div class="modal-footer">
-                            <a href="">Esqueceu a Senha?</a>
+
+
+                        <!-- MODAL CADASTRO -->
+                        <div class="modal fade" id="modalCadastro" tabindex="-1" role="dialog"
+                            aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel"
+                                            style="text-align: center; font-family:Arial, Helvetica, sans-serif;">
+                                            <b>Cadastrar-se</b>
+                                        </h5>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form class="modal-login">
+                                            <div class="form-group">
+                                                <label for="name">Nome Completo</label><br>
+                                                <input type="email" class="form-control; input-login" id="nome_usuario"
+                                                    aria-describedby="emailHelp" placeholder="Seu nome">
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="Date">Data de Nascimento</label><br>
+                                                <input type="date" class="form-control; input-login" id="data_usuario"
+                                                    placeholder="Senha">
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="Telefone">Telefone/Celular</label><br>
+                                                <input type="tel" class="form-control; input-login" id="contato_usuario"
+                                                    placeholder="Contato">
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="Telefone">CEP</label><br>
+                                                <input type="number" class="form-control; input-login" id="cep"
+                                                    placeholder="CEP">
+                                            </div>
+
+
+                                            <div class="form-group">
+                                                <label for="text">Logradouro</label><br>
+                                                <select class="form-control; input-login" id="logradouro"
+                                                    placeholder="Logradouro">
+                                                    <option value="Rua">Rua</option>
+                                                    <option value="Av">Avenida</option>
+                                                </select>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="number">N°</label><br>
+                                                <input type="number" class="form-control; input-login"
+                                                    id="numero_endereco" placeholder="N°">
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="text">Cidade</label><br>
+                                                <input type="text" class="form-control; input-login"
+                                                    id="cidade_endereco" placeholder="Cidade">
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="text">Bairro</label><br>
+                                                <input type="text" class="form-control; input-login"
+                                                    id="bairro_endereco" placeholder="Bairro">
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="Telefone">Apelido do Endereço</label><br>
+                                                <input type="text" class="form-control; input-login" id="nome_endereco"
+                                                    placeholder="Apelido">
+                                            </div>
+
+
+                                        </form>
+                                    </div>
+                                    <div class="modal-footer; modal-botao">
+                                        <button type="button" class="btn btn-danger btn-fill">Cadastrar-se</button>
+                                        <button type="button" class="btn btn-secondary"
+                                            data-dismiss="modal">Fechar</button>
+
+
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-            </div>     
-        <!--/.Login Modal-->
+                    </li>
 
-  
-                
-
-
-    <!-- slider -->
-    <div class="bd-example">
-        <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
-            <ol class="carousel-indicators">
-                <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
-                <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
-                <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
-            </ol>
-            <div class=" carousel-inner">
-                <div class="slider carousel-item active">
-                    <img src="https://cdn.startupi.com.br/wp-content/uploads/2019/08/blockchain.jpg" class="d-block w-100" alt="...">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5>First slide label</h5>
-                        <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-                    </div>
-                </div>
-                <div class="slider carousel-item">
-                    <img src="https://digiday.com/wp-content/uploads/2018/08/Coindesk-crypto.jpg" class="d-block w-100" alt="...">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5>Second slide label</h5>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                    </div>
-                </div>
-                <div class="slider carousel-item">
-                    <img src="https://ciphertrace.com/wp-content/uploads/2018/07/Q2-Crypto-AML-Report-Summary.jpg" class="d-block w-100" alt="...">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5>Third slide label</h5>
-                        <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-                    </div>
-                </div>
+                </ul>
             </div>
-            <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-            </a>
+
+        </div>
+    </nav>
+
+
+    <div class="section section-header">
+        <div class="parallax filter ">
+            <div class="image" style="background-image: url('img/header-1.jpg')">
+            </div>
+            <div class="container">
+                <div class="content">
+                    <div class="title-area">
+                        <img alt="..." class="logo" src="img/HASH_LOGO.png" />
+                        <h3>Você minera, a gente monitora.</h2>
+                            <div class="separator line-separator">♦</div>
+                    </div>
+                    <div class="button-get-started">
+                        <atarget="_blank" class="btn btn-white btn-fill btn-lg ">
+                            Cadastrar-se
+                            </a>
+                    </div>
+                </div>
+
+            </div>
         </div>
     </div>
-    <!-- Sobre -->
-    <section class="sec01 sect sect-about">
-        <p class="sect-title about-title">Por que monitoramos a sua mineração?</p>
-        <p class="about-content">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-            irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-    </section>
-    <!-- Serviços -->
-    <section class="sect sect-services">
-        <p class="sect-title ">Serviços</p>
-        <div class="services-list">
-            <div class="item-service">
-                <p class="is-title">Serviço 1</p>
-                <p class="is-content">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
-                    aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+
+    <div class="section" id="monitorar">
+        <div class="container">
+            <div class="row">
+                <div class="title-area">
+                    <h2>Por que monitorar sua mineração?</h2>
+                    <div class="separator separator-danger">✻</div>
+                    <p class="description">Através do nosso monitoramento, sua mineração rende mais e você se preocupa
+                        menos com
+                        sua máquina pois está ciente de tudo o que acontece.</p>
+                </div>
             </div>
-            <div class="item-service">
-                <p class="is-title">Serviço 2</p>
-                <p class="is-content">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
-                    aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            </div>
-            <div class="item-service">
-                <p class="is-title">Serviço 3</p>
-                <p class="is-content">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
-                    aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="info-icon">
+                        <div class="icon text-danger">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h2>Maior <b>rentabilidade</b> para seus negócios</h2>
+                        <p class="description">Você tem maior controle sobre seus
+                            negócios.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="info-icon">
+                        <div class="icon text-danger">
+                            <i class="fas fa-band-aid"></i>
+                        </div>
+                        <h2>Diagnósticos periódicos e precisos</h2>
+                        <p class="description">Enviamos relatórios sobre o desempenho do seu equipamento para melhor
+                            aproveitamento, controle de uso e manutenções.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="info-icon">
+                        <div class="icon text-danger">
+                            <i class="fas fa-bed"></i>
+                        </div>
+                        <h2>Menos preocupação, mais tempo livre</h2>
+                        <p class="description">Você agora tem tempo livre. Fique tranquilo, estaremos monitorando sua
+                            mineração.</p>
+                    </div>
+                </div>
             </div>
         </div>
-    </section>
-    <!-- Quem Somos -->
-    <section class="sect sect-whoareus">
-        <p class="sect-title ">Quem Somos?</p>
-    </section>
-    <!-- Teste Gratuito -->
-    <section class="sect sect-freetest">
-        <p class="sect-title ">Teste Gratuito</p>
-    </section>
+    </div>
+
+
+    <div class="section section-our-team-freebie" id="planos">
+        <div class="parallax filter filter-color-black">
+            <div class="image" style="background-image:url('img/header-2.jpg')">
+            </div>
+            <div class="container">
+                <div class="content">
+                    <div class="row">
+                        <div class="title-area">
+                            <h2>Nossos planos</h2>
+                            <div class="separator separator-danger">✻</div>
+                            <p class="description">Temos diversos planos. <br> Basta escolher aquele que melhor se
+                                encaixa em sua
+                                preferência : )</p>
+                        </div>
+                    </div>
+                    <div class="team">
+                        <div class="row">
+                            <div class="col-md-10 col-md-offset-1">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="card card-member">
+                                            <div class="content">
+                                                <div class="description">
+                                                    <h3 class="title">Plano Básico</h3>
+                                                    <p class="small-text">R$29,90</p>
+                                                    <p class="description">-Nesse plano você tem direito a monitoramento
+                                                        de uma máquina <br>- Acesso direto ao nosso suporte via service
+                                                        desk. <br> <br> <br> <br> <br><br><br></p>
+                                                </div>
+                                                <div class="button-get-started">
+                                                    <a href="#gaia" class="btn btn-danger btn-fill btn-lg">Contratar</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="card card-member">
+                                            <div class="content">
+                                                <div class="description">
+                                                    <h3 class="title">Plano Intermediário</h3>
+                                                    <p class="small-text">R$59,90</p>
+                                                    <p class="description">-Nesse plano você tem direito a monitoramento
+                                                        de até três máquinas <br>-Você pode entrar em pools diretamente
+                                                        criadas em nosso site.<br>- Acesso direto ao nosso suporte via
+                                                        service desk. <br><br><br> <br> </p>
+                                                </div>
+                                                <div class="button-get-started">
+                                                    <a href="#gaia" class="btn btn-danger btn-fill btn-lg">Contratar</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="card card-member">
+                                            <div class="content">
+                                                <div class="description">
+                                                    <h3 class="title">Plano BOSS</h3>
+                                                    <p class="small-text">R$99,90</p>
+                                                    <p class="description">-Você tem direito a monitoramento
+                                                        de até três máquinas <br>-Você pode entrar em pools diretamente
+                                                        criadas em nosso site. <br>-Você tem direito a criar pools
+                                                        diretamente do nosso site e convidar
+                                                        membros do site para te ajudar na gestão<br>- Acesso direto ao
+                                                        nosso
+                                                        suporte via service desk. </p>
+                                                </div>
+                                                <div class="button-get-started">
+                                                    <a href="#gaia" class="btn btn-danger btn-fill btn-lg">Contratar</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="section section-our-clients-freebie" id="sobre">
+        <div class="container">
+            <div class="title-area">
+                <h5 class="subtitle text-gray">Conheça a</h5>
+                <h2>Nossa equipe</h2>
+                <div class="separator separator-danger">✻</div>
+            </div>
+
+            <ul class="nav nav-text" role="tablist">
+                <li class="active">
+                    <a href="#testimonial1" role="tab" data-toggle="tab">
+                        <div class="image-clients">
+                            <img alt="..." class="img-circle" src="img/faces/fabiyugar.png" />
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#testimonial2" role="tab" data-toggle="tab">
+                        <div class="image-clients">
+                            <img alt="..." class="img-circle" src="img/faces/gabisutto.png" />
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#testimonial3" role="tab" data-toggle="tab">
+                        <div class="image-clients">
+                            <img alt="..." class="img-circle" src="img/faces/leoitalo.png" />
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#testimonial4" role="tab" data-toggle="tab">
+                        <div class="image-clients">
+                            <img alt="..." class="img-circle" src="img/faces/nathymedina.png" />
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#testimonial5" role="tab" data-toggle="tab">
+                        <div class="image-clients">
+                            <img alt="..." class="img-circle" src="img/faces/yulima.png" />
+                        </div>
+                    </a>
+                </li>
+            </ul>
+
+
+            <div class="tab-content">
+                <div class="tab-pane active" id="testimonial1">
+                    <p class="description">
+                        Analista de Negócios / Product Owner
+                    </p>
+                </div>
+                <div class="tab-pane" id="testimonial2">
+                    <p class="description">
+                        Desenvolvedor Front-end / UI Designer
+                    </p>
+                </div>
+                <div class="tab-pane" id="testimonial3">
+                    <p class="description">
+                        Desenvolvedor Back-end
+                    </p>
+                </div>
+                <div class="tab-pane" id="testimonial4">
+                    <p class="description">
+                        Scrum Master / Product Owner
+                    </p>
+                </div>
+                <div class="tab-pane" id="testimonial5">
+                    <p class="description">
+                        Desenvolvedor Fullstack / UX Designer
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+
+    <div class="section section-small section-get-started">
+        <div class="parallax filter">
+            <div class="image" style="background-image: url('img/header-3.jpg')">
+            </div>
+            <div class="container">
+                <div class="title-area">
+                    <h2 class="text-white">Quer testar?</h2>
+                    <div class="separator line-separator">✻</div>
+                    <p class="description">Caso queira apenas <b>testar</b> a nossa aplicação, vai fundo!
+                        Você terá acesso grátis por um mês, com acesso a uma máquina e <b>total suporte de nossa
+                            equipe</b></p>
+                </div>
+
+                <div class="button-get-started">
+                    <a href="#gaia" class="btn btn-danger btn-fill btn-lg">Teste grátis</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <footer class="footer footer-big footer-color-black" data-color="black">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-2 col-sm-3">
+                    <div class="info">
+                        <h5 class="title">Navegação</h5>
+                        <nav>
+                            <ul>
+                                <li>
+                                    <a href="#">Home</a></li>
+                                <li>
+                                    <a href="#">Por que monitorar</a>
+                                </li>
+                                <li>
+                                    <a href="#">Nossos planos</a>
+                                </li>
+                                <li>
+                                    <a href="#">Sobre nós</a>
+                                </li>
+                                <li>
+                                    <a href="#">Teste grátis</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+                <div class="col-md-3 col-md-offset-1 col-sm-3">
+                    <div class="info">
+                        <h5 class="title"> Alguma dúvida?</h5>
+                        <nav>
+                            <ul>
+                                <li>
+                                    <a href="#">Fale com a gente</a>
+                                </li>
+                                <li>
+                                    <a href="#">Como funciona</a>
+                                </li>
+                                <li>
+                                    <a href="#">Terms &amp; Conditions</a>
+                                </li>
+                                <li>
+                                    <a href="#">Company Policy</a>
+                                </li>
+                                <li>
+                                    <a href="#">Money Back</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-3">
+                    <div class="info">
+                        <h5 class="title">Latest News</h5>
+                        <nav>
+                            <ul>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-twitter"></i> <b>Get Shit Done</b> The best kit in the market is
+                                        here, just give it a try and let us...
+                                        <hr class="hr-small">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-twitter"></i> We've just been featured on <b> Awwwards
+                                            Website</b>! Thank you everybody for...
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+                <div class="col-md-2 col-md-offset-1 col-sm-3">
+                    <div class="info">
+                        <h5 class="title">siga-nos</h5>
+                        <nav>
+                            <ul>
+                                <li>
+                                    <a href="#" class="btn btn-social btn-facebook btn-simple">
+                                        <i class="fab fa-facebook-square"></i></i> Facebook
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="btn btn-social btn-twitter btn-simple">
+                                        <i class="fab fa-twitter-square"></i> Twitter
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="btn btn-social btn-twitter btn-simple">
+                                        <i class="fab fa-instagram"></i> Instagram
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="copyright">
+                ©
+                <script>
+                    document.write(new Date().getFullYear())
+                </script> MineHash,você minerando,a gente monitorando
+            </div>
+        </div>
+    </footer>
+
 </body>
+
+<!--   core js files    -->
+<script src="js/jquery.min.js" type="text/javascript"></script>
+<script src="js/bootstrap.js" type="text/javascript"></script>
+
+<!--  js library for devices recognition -->
+<script type="text/javascript" src="js/modernizr.js"></script>
+
+<!--  script for google maps   -->
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>
+
+<!--   file where we handle all the script from the Gaia - Bootstrap Template   -->
+<script type="text/javascript" src="js/gaia.js"></script>
 
 </html>

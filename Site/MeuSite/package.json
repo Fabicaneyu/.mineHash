@@ -1,22 +1,19 @@
 {
-  "name": "frontend",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "name": "myapp",
+  "version": "0.0.0",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "browser-sync": "^2.26.7",
-    "gulp": "^4.0.2",
-    "gulp-sass": "^4.0.2"
+    "start": "node ./bin/www"
   },
   "dependencies": {
     "bootstrap": "^4.3.1",
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "express": "~4.16.1",
+    "http-errors": "~1.6.3",
     "jquery": "^3.4.1",
-    "popper.js": "^1.15.0"
+    "morgan": "~1.9.1",
+    "popper.js": "^1.15.0",
+    "pug": "^2.0.4"
   }
 }
