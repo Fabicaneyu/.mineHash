@@ -126,18 +126,18 @@
                           <Group type="102" attributes="0">
                               <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-                              <Component id="tfLogin1" min="-2" pref="360" max="-2" attributes="0"/>
+                              <Component id="tfMemoria" min="-2" pref="360" max="-2" attributes="0"/>
                           </Group>
-                          <Component id="btSenha1" min="-2" pref="360" max="-2" attributes="0"/>
+                          <Component id="btAtualiza" min="-2" pref="360" max="-2" attributes="0"/>
                           <Group type="102" attributes="0">
                               <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="tfLogin3" min="-2" pref="360" max="-2" attributes="0"/>
+                              <Component id="tfProcessador" min="-2" pref="360" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
                               <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-                              <Component id="tfLogin" min="-2" pref="360" max="-2" attributes="0"/>
+                              <Component id="tfFab" min="-2" pref="360" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace max="32767" attributes="0"/>
@@ -149,7 +149,7 @@
                   <Group type="102" attributes="0">
                       <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="tfLogin" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
+                          <Component id="tfFab" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
                           <Component id="jLabel3" alignment="3" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace pref="10" max="32767" attributes="0"/>
@@ -161,15 +161,15 @@
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="tfLogin1" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
+                                  <Component id="tfMemoria" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
                                   <Component id="jLabel4" alignment="3" pref="34" max="32767" attributes="0"/>
                               </Group>
                               <EmptySpace max="32767" attributes="0"/>
-                              <Component id="tfLogin3" min="-2" pref="40" max="-2" attributes="0"/>
+                              <Component id="tfProcessador" min="-2" pref="40" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace min="-2" pref="53" max="-2" attributes="0"/>
-                      <Component id="btSenha1" min="-2" pref="40" max="-2" attributes="0"/>
+                      <Component id="btAtualiza" min="-2" pref="40" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="100" max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -181,7 +181,7 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Tahoma" size="24" style="0"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Processador:"/>
+                <Property name="text" type="java.lang.String" value="Fabricante:"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel4">
@@ -197,16 +197,16 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Tahoma" size="24" style="0"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="DISCO:"/>
+                <Property name="text" type="java.lang.String" value="Processador:"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="tfLogin">
+            <Component class="javax.swing.JTextField" name="tfFab">
             </Component>
-            <Component class="javax.swing.JTextField" name="tfLogin1">
+            <Component class="javax.swing.JTextField" name="tfMemoria">
             </Component>
-            <Component class="javax.swing.JTextField" name="tfLogin3">
+            <Component class="javax.swing.JTextField" name="tfProcessador">
             </Component>
-            <Component class="javax.swing.JButton" name="btSenha1">
+            <Component class="javax.swing.JButton" name="btAtualiza">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="5" green="7e" red="bd" type="rgb"/>
@@ -220,17 +220,12 @@
                 <Property name="text" type="java.lang.String" value="Atualizar"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btSenha1ActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btAtualizaActionPerformed"/>
               </Events>
             </Component>
           </SubComponents>
         </Container>
         <Component class="javax.swing.JLabel" name="lbImagem">
-          <Properties>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\HP x360\Documents\TELAS_SWING\Tela Captura Dados\02_10_2019_21_08_34.jpg"/>
-            </Property>
-          </Properties>
         </Component>
       </SubComponents>
     </Container>

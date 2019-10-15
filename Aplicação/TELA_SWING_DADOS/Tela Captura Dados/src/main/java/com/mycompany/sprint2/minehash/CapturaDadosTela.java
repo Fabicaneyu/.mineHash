@@ -1,21 +1,14 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package com.mycompany.sprint2.minehash;
 
-/**
- *
- * @author HP x360
- */
+
 public class CapturaDadosTela extends javax.swing.JFrame {
 
     
+    Aplicacao app = new Aplicacao();  
+   
     
-    /**
-     * Creates new form CapturaDadosTela
-     */
+     
     public CapturaDadosTela() {
         initComponents();
     }
@@ -36,10 +29,10 @@ public class CapturaDadosTela extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        tfLogin = new javax.swing.JTextField();
-        tfLogin1 = new javax.swing.JTextField();
-        tfLogin3 = new javax.swing.JTextField();
-        btSenha1 = new javax.swing.JButton();
+        tfFab = new javax.swing.JTextField();
+        tfMemoria = new javax.swing.JTextField();
+        tfProcessador = new javax.swing.JTextField();
+        btAtualiza = new javax.swing.JButton();
         lbImagem = new javax.swing.JLabel();
 
         btSenha.setBackground(new java.awt.Color(189, 126, 5));
@@ -64,21 +57,21 @@ public class CapturaDadosTela extends javax.swing.JFrame {
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jLabel3.setText("Processador:");
+        jLabel3.setText("Fabricante:");
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabel4.setText("RAM:");
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jLabel5.setText("DISCO:");
+        jLabel5.setText("Processador:");
 
-        btSenha1.setBackground(new java.awt.Color(189, 126, 5));
-        btSenha1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        btSenha1.setForeground(new java.awt.Color(255, 255, 255));
-        btSenha1.setText("Atualizar");
-        btSenha1.addActionListener(new java.awt.event.ActionListener() {
+        btAtualiza.setBackground(new java.awt.Color(189, 126, 5));
+        btAtualiza.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btAtualiza.setForeground(new java.awt.Color(255, 255, 255));
+        btAtualiza.setText("Atualizar");
+        btAtualiza.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btSenha1ActionPerformed(evt);
+                btAtualizaActionPerformed(evt);
             }
         });
 
@@ -92,16 +85,16 @@ public class CapturaDadosTela extends javax.swing.JFrame {
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(jLabel4)
                         .addGap(30, 30, 30)
-                        .addComponent(tfLogin1, javax.swing.GroupLayout.PREFERRED_SIZE, 360, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(btSenha1, javax.swing.GroupLayout.PREFERRED_SIZE, 360, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(tfMemoria, javax.swing.GroupLayout.PREFERRED_SIZE, 360, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btAtualiza, javax.swing.GroupLayout.PREFERRED_SIZE, 360, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(jLabel5)
                         .addGap(18, 18, 18)
-                        .addComponent(tfLogin3, javax.swing.GroupLayout.PREFERRED_SIZE, 360, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(tfProcessador, javax.swing.GroupLayout.PREFERRED_SIZE, 360, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(jLabel3)
                         .addGap(30, 30, 30)
-                        .addComponent(tfLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 360, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(tfFab, javax.swing.GroupLayout.PREFERRED_SIZE, 360, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -109,7 +102,7 @@ public class CapturaDadosTela extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(50, 50, 50)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(tfLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tfFab, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -119,16 +112,14 @@ public class CapturaDadosTela extends javax.swing.JFrame {
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(34, 34, 34)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(tfLogin1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(tfMemoria, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 34, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(tfLogin3, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(tfProcessador, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(53, 53, 53)
-                .addComponent(btSenha1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btAtualiza, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(100, 100, 100))
         );
-
-        lbImagem.setIcon(new javax.swing.ImageIcon("C:\\Users\\HP x360\\Documents\\TELAS_SWING\\Tela Captura Dados\\02_10_2019_21_08_34.jpg")); // NOI18N
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -175,11 +166,21 @@ public class CapturaDadosTela extends javax.swing.JFrame {
 
     private void btSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSenhaActionPerformed
         System.exit(0);
+        
     }//GEN-LAST:event_btSenhaActionPerformed
 
-    private void btSenha1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSenha1ActionPerformed
-        System.exit(0);
-    }//GEN-LAST:event_btSenha1ActionPerformed
+    private void btAtualizaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btAtualizaActionPerformed
+        
+        app.banco.getConnection();   
+        
+        tfFab.setText(app.inserir.getFabricante());
+        tfMemoria.setText(app.inserir.getMemoriaTotal());
+        tfProcessador.setText(app.inserir.getProcessador());
+        
+        
+        
+        
+    }//GEN-LAST:event_btAtualizaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -217,8 +218,8 @@ public class CapturaDadosTela extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btAtualiza;
     private javax.swing.JButton btSenha;
-    private javax.swing.JButton btSenha1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -226,8 +227,8 @@ public class CapturaDadosTela extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JLabel lbImagem;
-    private javax.swing.JTextField tfLogin;
-    private javax.swing.JTextField tfLogin1;
-    private javax.swing.JTextField tfLogin3;
+    private javax.swing.JTextField tfFab;
+    private javax.swing.JTextField tfMemoria;
+    private javax.swing.JTextField tfProcessador;
     // End of variables declaration//GEN-END:variables
 }

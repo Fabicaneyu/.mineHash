@@ -22,9 +22,9 @@ public class ConexaoBanco {
 //                    + "encrypt=true;trustServerCertificate=false;"
 //                    + "hostNameInCertificate=*.database.windows.net;loginTimeout=30;");
             conexao.setDriverClassName("com.mysql.cj.jdbc.Driver");
-            conexao.setUrl("jdbc:mysql://localhost:3306/teste_oshi?useTimezone=true&serverTimezone=UTC");
-            conexao.setUsername("root");
-            conexao.setPassword("Leo5767482200");
+            conexao.setUrl("jdbc:mysql://localhost:3306/CapturaDados?useTimezone=true&serverTimezone=UTC");
+            conexao.setUsername("minehash");
+            conexao.setPassword("1234");
 
         } catch (Exception e) {
             e.printStackTrace();
