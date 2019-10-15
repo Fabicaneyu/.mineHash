@@ -1,28 +1,36 @@
 .modal-login {
- text-align: center;
- align-content: center;
-    
-
+    text-align: center;
+    align-content: center;
 }
 
 .input-login {
     width: 300px;
-    align-content: center;     
+    align-content: center;
     border: solid;
     border-width: 0.4px;
-    border-radius: 3.6px;   
-     
+    border-radius: 3.6px;
 }
 
 .modal-botao {
     align-content: center;
     text-align: center;
-
-
 }
 
 .modal-tamanho {
     width: 500px;
     height: 600px;
     align-content: center;
+}
+
+.input-forgot-pass {
+    width: 300px;
+    align-content: center;
+    border: solid;
+    margin: 0.5em;
+    border-width: 0.4px;
+    border-radius: 3.6px;
+}
+
+.forgot-pass:hover {
+    color: #F0CC04;
 }
