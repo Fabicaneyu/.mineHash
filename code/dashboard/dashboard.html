@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="pt-br" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>mineHash - Dashboard do Colaborador</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <script src="https://kit.fontawesome.com/b40e41c797.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/dashboard.css">
+  </head>
+  <body>
+    <header class="dashboard-header">
+      <div class="header-logo">
+        <img class="header-img" src="./img/mineHash.png" alt="MineHash logo">
+      </div>
+      <div class="container header-search-bar">
+        <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="search" placeholder="Pesquisar" aria-label="Pesquisar">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="fas fa-search"></i></button>
+        </form>
+      </div>
+      <div class="container header-user">
+        <ul class="container user-actions">
+          <li class="user-action">
+            <a href="#notifications"><i class="fas fa-bell"></i></a>
+          </li>
+          <li class="user-action">
+            <a href="#messages"><i class="far fa-envelope"></i></a>
+          </li>
+          <li class="user-action">
+            <a href="#profile"><i class="fas fa-user"></i></a>
+          </li>
+        </ul>
+      </div>
+    </header>
+    <nav class="sidebar container nav-bar navbar-dark bg-dark">
+      <ul class="nav-items">
+        <li class="nav-item">
+          <a class="nav-button" href="./dashboard.html"><i class="fas fa-home"></i></a> <!-- Pagina inicial -->
+        </li>
+        <li class="nav-item">
+          <a class="nav-button" href="./historico.html"><i class="fas fa-history"></i></a> <!-- Histórico -->
+        </li>
+        <li class="nav-item">
+          <a class="nav-button" href="./pools.html"><i class="fas fa-users"></i></a> <!-- Pools -->
+        </li>
+      </ul>
+
+      <div class="nav-div"></div>
+
+      <ul class="nav-items">
+        <li class="nav-item">
+          <a class="nav-button" href="./configs.html"><i class="fas fa-cogs"></i></a> <!-- Configuracoes -->
+        </li>
+        <li class="nav-item">
+          <a class="nav-button" href=""><i class="far fa-question-circle"></i></a> <!-- Ajuda -->
+        </li>
+      </ul>
+    </nav>
+    <section class="container dash-page">
+      <!--  -->
+      <div class="shadow p-3 mb-5 bg-white rounded container dash-chart">
+        <canvas id="exampleChart" width="1000px" height="400px"></canvas>
+      </div>
+
+      <div class="container">
+        <h2>Dados Atuais</h2>
+        <div class="container dash-details">
+          <div class="container shadow p-3 mb-5 bg-white rounded detail-item">
+            <p class="detail-title"><i class="fas fa-chart-bar"></i> CPU</p>
+            <span class="detail-value-start"></span>
+            /
+            <span class="detail-value-end"></span>
+          </div>
+          <div class="container shadow p-3 mb-5 bg-white rounded detail-item">
+            <p class="detail-title"><i class="fas fa-chart-bar"></i> GPU</p>
+            <span class="detail-value-start"></span>
+            /
+            <span class="detail-value-end"></span>
+          </div>
+          <div class="container shadow p-3 mb-5 bg-white rounded detail-item">
+            <p class="detail-title"><i class="fas fa-chart-bar"></i> RAM</p>
+            <span class="detail-value-start"></span>
+            /
+            <span class="detail-value-end"></span>
+          </div>
+          <div class="container shadow p-3 mb-5 bg-white rounded detail-item">
+            <p class="detail-title"><i class="fas fa-chart-bar"></i> HDD/SSD</p>
+            <span class="detail-value-start"></span>
+            /
+            <span class="detail-value-end"></span>
+          </div>
+          <!-- <div class="container shadow p-3 mb-5 bg-white rounded detail-item">
+            <p class="detail-title"><i class="fas fa-chart-bar"></i></p>
+          </div> -->
+        </div>
+      </div>
+
+    </section>
+  </body>
+</html>
+<script type="text/javascript">
+  const ctx = document.getElementById('exampleChart').getContext('2d');
+  const months = [
+    'Janeiro',
+    'Fevereiro',
+    'Marco',
+    'Abril',
+    'Maio',
+    'Junho',
+    'Julho',
+    'Agosto',
+    'Setembro',
+    'Outubro',
+    'Novembro',
+    'Dezembro'
+  ];
+
+  function calc() {
+    const userData = [];
+
+    for (let i = 0; i < 12; i++) {
+      const mathResult = Math.random() * (101 - 1) + 1;
+      userData.push(Number(mathResult).toFixed(2));
+    }
+    return userData;
+  }
+
+  const chart = new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: months,
+        datasets: [{
+          label: 'Atual',
+          data: calc(),
+          backgroundColor: '#15919B'
+        }, {
+          label: 'Ano passado',
+          data: calc(),
+          backgroundColor: '#33333F'
+        }]
+      },
+      options: {
+        labels: {
+          position: 'bottom'
+        }
+      }
+  });
+
+  for (let i = 0; i <= 3; i++) {
+    const startValue = document.getElementsByClassName(`detail-value-start`)[i];
+    const endValue = document.getElementsByClassName(`detail-value-end`)[i];
+
+    if (i == 0) {
+      startValue.innerHTML += `${Number(Math.random() * (59 - 1) + 1).toFixed(2)}`;
+      endValue.innerHTML += `${Number(Math.random() * (101 - 60) + 60).toFixed(2)}<strong>%</strong>`;
+    } else if (i == 1) {
+      startValue.innerHTML += `${Number(Math.random() * (59 - 1) + 1).toFixed(2)}`;
+      endValue.innerHTML += `${Number(Math.random() * (101 - 60) + 60).toFixed(2)}<strong>%</strong>`;
+    } else if (i == 2) {
+      startValue.innerHTML += `${Number(Math.random() * (8 - 4) + 4).toFixed(2)}`;
+      endValue.innerHTML += `${Number(Math.random() * (17 - 9) + 9).toFixed(2)} <strong>GB</strong>`;
+    } else if (i == 3) {
+      startValue.innerHTML += `${Number(Math.random() * (849 - 180) + 180).toFixed(2)}`;
+      endValue.innerHTML += `${Number(Math.random() * (1001 - 850) + 850).toFixed(2)} <strong>GB</strong>`;
+    }
+
+  }
+
+</script>

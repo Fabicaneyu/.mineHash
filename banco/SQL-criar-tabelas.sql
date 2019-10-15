@@ -10,10 +10,10 @@ CREATE TABLE tb_minerador (
   endereco_nome VARCHAR(255) NOT NULL,
   endereco_cidade VARCHAR(65) NOT NULL,
   endereco_bairro VARCHAR(65) NOT NULL,
-  endereco as (
-    endereco_logradouro + ' ' + endereco_nome + ', ' + endereco_numero + ', '
-    + endereco_bairro + ', ' + endereco_cidade + ' - ' + endereco_cep
-  ) -- Ex: Rua Edimar Fagundes Filho, 5023, São Paulo - 05232-792
+  -- endereco as (
+  --   endereco_logradouro + ' ' + endereco_nome + ', ' + endereco_numero + ', '
+  --   + endereco_bairro + ', ' + endereco_cidade + ' - ' + endereco_cep
+  -- ) -- Ex: Rua Edimar Fagundes Filho, 5023, São Paulo - 05232-792
 );
 
 CREATE TABLE tb_computador (
