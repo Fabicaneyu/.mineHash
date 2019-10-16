@@ -18,8 +18,10 @@
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
     <link href="css/fonts/pe-icon-7-stroke.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300i,400" rel="stylesheet">
+
     <script src="https://kit.fontawesome.com/e5b28b8596.js"></script>
     <script src="js/login_funcional.js"></script>
+    <script src="js/validacao_cep_funcional.js"></script>
 
 </head>
 
@@ -29,7 +31,8 @@
         <!-- if you want to keep the navbar hidden you can add this class to the navbar "navbar-burger"-->
         <div class="container">
             <div class="navbar-header">
-                <button id="menu-toggle" type="button" class="navbar-toggle" data-toggle="collapse" data-target="#example">
+                <button id="menu-toggle" type="button" class="navbar-toggle" data-toggle="collapse"
+                    data-target="#example">
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar bar1"></span>
                     <span class="icon-bar bar2"></span>
@@ -69,17 +72,20 @@
                     </li>
                     <li>
                         <!-- Botão para acionar modal -->
-                        <button type="button" class="btn btn-danger btn-fill" data-toggle="modal" data-target="#modal_1">
+                        <button type="button" class="btn btn-danger btn-fill" data-toggle="modal"
+                            data-target="#modal_1">
                             Login
                         </button>
 
 
                         <!-- Modal LOGIN -->
-                        <div class="modal fade" id="modal_1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal fade" id="modal_1" tabindex="-1" role="dialog"
+                            aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <h5 class="modal-title" id="exampleModalLabel" style="text-align: center; font-family:Arial, Helvetica, sans-serif;">
+                                        <h5 class="modal-title" id="exampleModalLabel"
+                                            style="text-align: center; font-family:Arial, Helvetica, sans-serif;">
                                             <b>Fazer login</b>
                                         </h5>
                                     </div>
@@ -87,21 +93,28 @@
                                         <form class="modal-login" id="modal_login">
                                             <div class="form-group">
                                                 <label for="exampleInputEmail1">Email</label><br>
-                                                <input type="email" class="form-control; input-login" name="login_usuario" id="email" aria-describedby="emailHelp" placeholder="Seu email">
+                                                <input type="email" class="form-control; input-login"
+                                                    name="login_usuario" id="email" aria-describedby="emailHelp"
+                                                    placeholder="Seu email">
                                             </div>
 
                                             <div class="form-group">
                                                 <label for="exampleInputPassword1">Senha</label><br>
-                                                <input type="password" class="form-control; input-login" name="senha_usuario" id="senha" placeholder="Senha"><br>
-                                                <a class="forgot-pass" data-toggle="modal" data-target="#modal-senha">esqueceu sua senha?</a>
+                                                <input type="password" class="form-control; input-login"
+                                                    name="senha_usuario" id="senha" placeholder="Senha"><br>
+                                                <a class="forgot-pass" data-toggle="modal"
+                                                    data-target="#modal-senha">esqueceu sua senha?</a>
                                             </div>
 
                                         </form>
                                     </div>
                                     <div class="modal-footer; modal-botao">
-                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-                                        <button type="button" class="btn btn-danger btn-fill" data-toggle="modal" data-target="#modalCadastro">Cadastrar-se</button>
-                                        <button type="button" class="btn btn-danger btn-fill" id="btn_login" onclick="validacao()">Login</button><br>
+                                        <button type="button" class="btn btn-secondary"
+                                            data-dismiss="modal">Fechar</button>
+                                        <button type="button" class="btn btn-danger btn-fill" data-toggle="modal"
+                                            data-target="#modalCadastro">Cadastrar-se</button>
+                                        <button type="button" class="btn btn-danger btn-fill" id="btn_login"
+                                            onclick="validacao()">Login</button><br>
 
 
                                     </div>
@@ -111,68 +124,96 @@
 
 
                         <!-- MODAL CADASTRO -->
-                        <div class="modal fade" id="modalCadastro" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal fade" id="modalCadastro" tabindex="-1" role="dialog"
+                            aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <h5 class="modal-title" id="exampleModalLabel" style="text-align: center; font-family:Arial, Helvetica, sans-serif;">
+                                        <h5 class="modal-title" id="exampleModalLabel"
+                                            style="text-align: center; font-family:Arial, Helvetica, sans-serif;">
                                             <b>Cadastrar-se</b>
                                         </h5>
                                     </div>
                                     <div class="modal-body">
-                                        <form class="modal-login">
+                                        <form class="modal-login" method="get" action=".">
+
                                             <div class="form-group">
                                                 <label for="name">Nome Completo</label><br>
-                                                <input type="email" class="form-control; input-login" id="nome_usuario" aria-describedby="emailHelp" placeholder="Seu nome">
+                                                <input type="email" class="form-control; input-login" id="nome_usuario"
+                                                    aria-describedby="emailHelp" placeholder="Seu nome">
                                             </div>
+
+
 
                                             <div class="form-group">
                                                 <label for="Date">Data de Nascimento</label><br>
-                                                <input type="date" class="form-control; input-login" id="data_usuario" placeholder="Senha">
+                                                <input type="date" class="form-control; input-login" id="data_usuario"
+                                                    placeholder="Senha">
                                             </div>
+
 
                                             <div class="form-group">
                                                 <label for="text">CPF ou CNPJ</label><br>
-                                                <input type="date" class="form-control; input-login" id="cpf_cnpj_usuario" placeholder="insira seu CPF ou CPNJ">
+                                                <input type="text" class="form-control; input-login"
+                                                    id="cpf_cnpj_usuario" placeholder="CPF ou CPNJ">
                                             </div>
 
                                             <div class="form-group">
                                                 <label for="Telefone">Telefone/Celular</label><br>
-                                                <input type="tel" class="form-control; input-login" id="contato_usuario" placeholder="Contato">
+                                                <input type="tel" class="form-control; input-login" id="contato_usuario"
+                                                    placeholder="Contato">
                                             </div>
 
                                             <div class="form-group">
-                                                <label for="Telefone">CEP</label><br>
-                                                <input type="number" class="form-control; input-login" id="cep" placeholder="CEP">
+                                                <label for="cep">CEP</label><br>
+                                                <input type="text" class="form-control; input-login" placeholder="CEP"
+                                                    name="cep" type="text" id="cep" value="" size="10" maxlength="9"
+                                                    onblur="pesquisacep(this.value);">
                                             </div>
 
+                                            <div class="form-group">
+                                                <label for="text">Cidade</label><br>
+                                                <input type="text" class="form-control; input-login" name="cidade"
+                                                    type="text" id="cidade" size="40" placeholder="Cidade">
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="text">Bairro</label><br>
+                                                <input type="text" class="form-control; input-login" name="bairro"
+                                                    type="text" id="bairro" size="40" placeholder="Bairro">
+                                            </div>
 
                                             <div class="form-group">
                                                 <label for="text">Logradouro</label><br>
-                                                <select class="form-control; input-login" id="logradouro" placeholder="Logradouro">
+                                                <select class="form-control; input-login" id="logradouro"
+                                                    placeholder="Logradouro">
                                                     <option value="Rua">Rua</option>
                                                     <option value="Av">Avenida</option>
                                                 </select>
                                             </div>
 
                                             <div class="form-group">
+                                                <label for="text">Endereço</label><br>
+                                                <input class="form-control; input-login" type="text" name="rua"
+                                                    type="text" id="rua" size="60">
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="text">Estado</label><br>
+                                                <input type="text" class="form-control; input-login" name="uf"
+                                                    type="text" id="uf" size="2">
+                                            </div>
+
+                                            <div class="form-group">
                                                 <label for="number">N°</label><br>
-                                                <input type="number" class="form-control; input-login" id="numero_endereco" placeholder="N°">
-                                            </div>
-
-                                            <div class="form-group">
-                                                <label for="text">Cidade</label><br>
-                                                <input type="text" class="form-control; input-login" id="cidade_endereco" placeholder="Cidade">
-                                            </div>
-
-                                            <div class="form-group">
-                                                <label for="text">Bairro</label><br>
-                                                <input type="text" class="form-control; input-login" id="bairro_endereco" placeholder="Bairro">
+                                                <input type="number" class="form-control; input-login"
+                                                    id="numero_endereco" placeholder="N°">
                                             </div>
 
                                             <div class="form-group">
                                                 <label for="Telefone">Apelido do Endereço</label><br>
-                                                <input type="text" class="form-control; input-login" id="nome_endereco" placeholder="Apelido">
+                                                <input type="text" class="form-control; input-login" id="nome_endereco"
+                                                    placeholder="Apelido">
                                             </div>
 
 
@@ -180,7 +221,8 @@
                                     </div>
                                     <div class="modal-footer; modal-botao">
                                         <button type="button" class="btn btn-danger btn-fill">Cadastrar-se</button>
-                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                                        <button type="button" class="btn btn-secondary"
+                                            data-dismiss="modal">Fechar</button>
 
 
                                     </div>
@@ -191,11 +233,13 @@
 
                         <!-- modal esqueci minha senha -->
 
-                        <div class="modal fade" id="modal-senha" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal fade" id="modal-senha" tabindex="-1" role="dialog"
+                            aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <h5 class="modal-title" id="exampleModalLabel" style="text-align: center; font-family:Arial, Helvetica, sans-serif;">
+                                        <h5 class="modal-title" id="exampleModalLabel"
+                                            style="text-align: center; font-family:Arial, Helvetica, sans-serif;">
                                             <b>Recuperar senha</b>
                                         </h5>
                                     </div>
@@ -204,18 +248,23 @@
                                             <center>
                                                 <div class="form-group">
                                                     <label for="email">email</label><br>
-                                                    <input type="text" class="form-control; input-forgot-pass" id="email-senha" placeholder="email usado no cadastro"> <br>
+                                                    <input type="text" class="form-control; input-forgot-pass"
+                                                        id="email-senha" placeholder="email usado no cadastro"> <br>
                                                     <label for="email">data usada no cadastro</label><br>
-                                                    <input type="date" class="form-control; input-forgot-pass" id="data-senha" placeholder="data usada no cadastro"><br>
+                                                    <input type="date" class="form-control; input-forgot-pass"
+                                                        id="data-senha" placeholder="data usada no cadastro"><br>
                                                     <label for="cpf">cpf ou cnpj usado no cadastro</label><br>
-                                                    <input type="text" class="form-control; input-forgot-pass" id="cpf-senha" placeholder="seu cpf/cnpj">
+                                                    <input type="text" class="form-control; input-forgot-pass"
+                                                        id="cpf-senha" placeholder="seu cpf/cnpj">
                                                 </div>
                                             </center>
                                         </form>
                                     </div>
                                     <div class="modal-footer; modal-botao">
-                                        <button type="button" class="btn btn-danger btn-fill" data-toggle="modal" data-target="#modal-change">Recuperar senha</button>
-                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                                        <button type="button" class="btn btn-danger btn-fill" data-toggle="modal"
+                                            data-target="#modal-change">Recuperar senha</button>
+                                        <button type="button" class="btn btn-secondary"
+                                            data-dismiss="modal">Fechar</button>
 
 
                                     </div>
@@ -224,11 +273,13 @@
                         </div>
 
                         <!-- modal troca de senha -->
-                        <div class="modal fade" id="modal-change" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal fade" id="modal-change" tabindex="-1" role="dialog"
+                            aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <h5 class="modal-title" id="exampleModalLabel" style="text-align: center; font-family:Arial, Helvetica, sans-serif;">
+                                        <h5 class="modal-title" id="exampleModalLabel"
+                                            style="text-align: center; font-family:Arial, Helvetica, sans-serif;">
                                             <b>Recuperar senha</b>
                                         </h5>
                                     </div>
@@ -237,24 +288,28 @@
                                             <center>
                                                 <div class="form-group">
                                                     <label for="new-pass">Nova senha</label><br>
-                                                    <input type="password" class="form-control; input-forgot-pass" id="senha-nova" placeholder="insira uma senha nova"> <br>
+                                                    <input type="password" class="form-control; input-forgot-pass"
+                                                        id="senha-nova" placeholder="insira uma senha nova"> <br>
                                                     <label for="password">Repita a senha</label><br>
-                                                    <input type="password" class="form-control; input-forgot-pass" id="confirma-senha" placeholder="confirme sua senha"><br>
+                                                    <input type="password" class="form-control; input-forgot-pass"
+                                                        id="confirma-senha" placeholder="confirme sua senha"><br>
 
                                                 </div>
                                             </center>
                                         </form>
                                     </div>
                                     <div class="modal-footer; modal-botao">
-                                        <button type="button" class="btn btn-danger btn-fill" data-toggle="modal" data-target="#modal_change">Resetar senha</button>
-                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                                        <button type="button" class="btn btn-danger btn-fill" data-toggle="modal"
+                                            data-target="#modal_change">Resetar senha</button>
+                                        <button type="button" class="btn btn-secondary"
+                                            data-dismiss="modal">Fechar</button>
 
                     </li>
 
                 </ul>
-                </div>
+            </div>
 
-                </div>
+        </div>
     </nav>
 
 
@@ -287,7 +342,8 @@
                 <div class="title-area">
                     <h2>Por que monitorar sua mineração?</h2>
                     <div class="separator separator-danger">✻</div>
-                    <p class="description">Através do nosso monitoramento, sua mineração rende mais e você se preocupa menos com sua máquina pois está ciente de tudo o que acontece.</p>
+                    <p class="description">Através do nosso monitoramento, sua mineração rende mais e você se preocupa
+                        menos com sua máquina pois está ciente de tudo o que acontece.</p>
                 </div>
             </div>
             <div class="row">
@@ -307,7 +363,8 @@
                             <i class="fas fa-band-aid"></i>
                         </div>
                         <h2>Diagnósticos periódicos e precisos</h2>
-                        <p class="description">Enviamos relatórios sobre o desempenho do seu equipamento para melhor aproveitamento, controle de uso e manutenções.</p>
+                        <p class="description">Enviamos relatórios sobre o desempenho do seu equipamento para melhor
+                            aproveitamento, controle de uso e manutenções.</p>
                     </div>
                 </div>
                 <div class="col-md-4">
@@ -316,7 +373,8 @@
                             <i class="fas fa-bed"></i>
                         </div>
                         <h2>Menos preocupação, mais tempo livre</h2>
-                        <p class="description">Você agora tem tempo livre. Fique tranquilo, estaremos monitorando sua mineração.
+                        <p class="description">Você agora tem tempo livre. Fique tranquilo, estaremos monitorando sua
+                            mineração.
                         </p>
                     </div>
                 </div>
@@ -335,7 +393,8 @@
                         <div class="title-area">
                             <h2>Nossos planos</h2>
                             <div class="separator separator-danger">✻</div>
-                            <p class="description">Temos diversos planos. <br> Basta escolher aquele que melhor se encaixa em sua preferência : )</p>
+                            <p class="description">Temos diversos planos. <br> Basta escolher aquele que melhor se
+                                encaixa em sua preferência : )</p>
                         </div>
                     </div>
                     <div class="team">
@@ -348,7 +407,9 @@
                                                 <div class="description">
                                                     <h3 class="title">Plano Básico</h3>
                                                     <p class="small-text">R$29,90</p>
-                                                    <p class="description">-Nesse plano você tem direito a monitoramento de uma máquina <br>- Acesso direto ao nosso suporte via service desk. <br> <br> <br> <br> <br><br><br></p>
+                                                    <p class="description">-Nesse plano você tem direito a monitoramento
+                                                        de uma máquina <br>- Acesso direto ao nosso suporte via service
+                                                        desk. <br> <br> <br> <br> <br><br><br></p>
                                                 </div>
                                                 <div class="button-get-started">
                                                     <a href="#gaia" class="btn btn-danger btn-fill btn-lg">Contratar</a>
@@ -362,7 +423,10 @@
                                                 <div class="description">
                                                     <h3 class="title">Plano Intermediário</h3>
                                                     <p class="small-text">R$59,90</p>
-                                                    <p class="description">-Nesse plano você tem direito a monitoramento de até três máquinas <br>-Você pode entrar em pools diretamente criadas em nosso site.<br>- Acesso direto ao nosso suporte via service desk. <br><br><br>                                                        <br> </p>
+                                                    <p class="description">-Nesse plano você tem direito a monitoramento
+                                                        de até três máquinas <br>-Você pode entrar em pools diretamente
+                                                        criadas em nosso site.<br>- Acesso direto ao nosso suporte via
+                                                        service desk. <br><br><br> <br> </p>
                                                 </div>
                                                 <div class="button-get-started">
                                                     <a href="#gaia" class="btn btn-danger btn-fill btn-lg">Contratar</a>
@@ -376,8 +440,12 @@
                                                 <div class="description">
                                                     <h3 class="title">Plano BOSS</h3>
                                                     <p class="small-text">R$99,90</p>
-                                                    <p class="description">-Você tem direito a monitoramento de até três máquinas <br>-Você pode entrar em pools diretamente criadas em nosso site. <br>-Você tem direito a criar pools diretamente do nosso site e convidar membros
-                                                        do site para te ajudar na gestão<br>- Acesso direto ao nosso suporte via service desk. </p>
+                                                    <p class="description">-Você tem direito a monitoramento de até três
+                                                        máquinas <br>-Você pode entrar em pools diretamente criadas em
+                                                        nosso site. <br>-Você tem direito a criar pools diretamente do
+                                                        nosso site e convidar membros
+                                                        do site para te ajudar na gestão<br>- Acesso direto ao nosso
+                                                        suporte via service desk. </p>
                                                 </div>
                                                 <div class="button-get-started">
                                                     <a href="#gaia" class="btn btn-danger btn-fill btn-lg">Contratar</a>
@@ -483,7 +551,8 @@
                 <div class="title-area">
                     <h2 class="text-white">Quer testar?</h2>
                     <div class="separator line-separator">✻</div>
-                    <p class="description">Caso queira apenas <b>testar</b> a nossa aplicação, vai fundo! Você terá acesso grátis por um mês, com acesso a uma máquina e <b>total suporte de nossa
+                    <p class="description">Caso queira apenas <b>testar</b> a nossa aplicação, vai fundo! Você terá
+                        acesso grátis por um mês, com acesso a uma máquina e <b>total suporte de nossa
                             equipe</b></p>
                 </div>
 
@@ -552,7 +621,8 @@
                             <ul>
                                 <li>
                                     <a href="#">
-                                        <i class="fa fa-twitter"></i> <b>Get Shit Done</b> The best kit in the market is here, just give it a try and let us...
+                                        <i class="fa fa-twitter"></i> <b>Get Shit Done</b> The best kit in the market is
+                                        here, just give it a try and let us...
                                         <hr class="hr-small">
                                     </a>
                                 </li>
