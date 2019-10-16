@@ -6,9 +6,20 @@
 .input-login {
     width: 300px;
     align-content: center;
-    border: solid;
-    border-width: 0.4px;
-    border-radius: 3.6px;
+    border: solid 1px black;
+    border-radius: 4px;
+    padding: 8px 16px;
+    color: black;
+    font-size: 1em;
+}
+
+.div-modal {
+
+    padding: 8px;
+    
+    
+
+
 }
 
 .modal-botao {
