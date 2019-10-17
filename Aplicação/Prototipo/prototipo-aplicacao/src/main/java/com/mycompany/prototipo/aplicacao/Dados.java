@@ -29,5 +29,11 @@ public class Dados extends CapturaDadosOshi {
                 getHostname(), getFabricante(), getModelo(), getProcessador(),
                 getMemoriaTotal(), getMemoriaDisp(), getSistemaOperacional());
 
+        conexaoBanco.template().update(
+                "insert into tb_processo (pid, nome_processo, prioridade) values (?,?,?)",
+                getIdProcesso(), getNomeProcesso(), getPrioridadeProcesso()
+        );
+
     }
+
 }
