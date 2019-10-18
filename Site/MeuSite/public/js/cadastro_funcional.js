@@ -1,24 +1,24 @@
 function validacao() {
-    if (nome_usuario.value != "" && email.value != "" && telefone_usuario.value != "" && cpf_usuario.value != "" &&
-        senha_usuario.value != "" && confirmacao_senha.value != "") {
-            if (senha_usuario.value.length < 8) {
-                alert('A senha deve conter 8 ou mais caracteres')
-                senha_usuario.value = "";
-            }
-        if (senha_usuario.value != confirmacao_senha.value) {
-            alert('Por favor confirme a senha corretamente');
-            confirmacao_senha.value="";
-        }
-        else if(cb_termos.checked == false){
-            alert('Por favor aceite os termos de uso');
-        }
-        else {
+    // if (nome_usuario.value != "" && email.value != "" && telefone_usuario.value != "" && cpf_usuario.value != "" &&
+    //     senha_usuario.value != "" && conf.value != ""&& confirmacao_senha.value != "") {
+    //         if (senha_usuario.value.length < 8) {
+    //             alert('A senha deve conter 8 ou mais caracteres')
+    //             senha_usuario.value = "";
+    //         }
+    //     if (senha_usuario.value != confirmacao_senha.value) {
+    //         alert('Por favor confirme a senha corretamente');
+    //         confirmacao_senha.value="";
+    //     }
+    //     else if(cb_termos.checked == false){
+    //         alert('Por favor aceite os termos de uso');
+    //     }
+    //     else {
             cadastrar();
-        }
-    }
-    else {
-        alert('Por favor preencha todos os campos');
-    }
+        
+    // }
+    // else {
+    //     alert('Por favor preencha todos os campos');
+    // }
 
 }
 
@@ -35,7 +35,7 @@ function cadastrar() {
     console.log('EFETUANDO CADASTRO');
 
     aguardar();
-    var formulario = new URLSearchParams(new FormData(form_cadastro));
+    var formulario = new URLSearchParams(new FormData(modal_cadastro));
     fetch('/usuarios/cadastrar', {
         method: "POST",
         body: formulario
@@ -51,8 +51,8 @@ function cadastrar() {
                     finalizar_aguardar();
                 } else {
                     // alert('Usuário cadastrado com sucesso!').then(function () {
-                         sessionStorage.ID_USUARIO = resposta.id;
-                         window.location.href = 'cadastro_endereco.html';
+                        // sessionStorage.ID_USUARIO = resposta.id;
+                         window.location.href = 'dashboard.html';
                     // })
                 }
 
