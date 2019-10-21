@@ -2225,7 +2225,7 @@ fieldset[disabled] .form-control {
 }
 
 .card .btn {
-    margin-top: 15px;
+    position: relative-parent;
 }
 
 .card>img {
@@ -2241,6 +2241,10 @@ fieldset[disabled] .form-control {
     font-size: 13px;
 }
 
+.btn2 {
+    margin-top: 1em;
+}
+
 .card-member {
     display: block;
     text-align: center;
@@ -2249,6 +2253,7 @@ fieldset[disabled] .form-control {
 
 .card-member .content {
     padding: 25px;
+    height: 30em;
 }
 
 .card-member>img {
