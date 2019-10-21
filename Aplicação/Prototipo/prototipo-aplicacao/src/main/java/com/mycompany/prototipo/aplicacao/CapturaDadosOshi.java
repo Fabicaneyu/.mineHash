@@ -87,9 +87,11 @@ public class CapturaDadosOshi {
 
     // aqui estão os nossos "getters". Agora nós retornamos os valores dos atributos
     // após a execução dos métodos do oshi
+
     public String getHostname() {
         return hostname;
     }
+    
 
     public String getFabricante() {
         return fabricante;

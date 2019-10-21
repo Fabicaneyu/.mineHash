@@ -3,17 +3,21 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.mycompany.mavenlogin;
 
 
 import java.awt.Color;
 import java.awt.Point;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
 
 public class Login extends javax.swing.JFrame {
+    
+    
+
     private Point point = new Point();
+
     /**
      * Creates new form Login
      */
@@ -35,7 +39,7 @@ public class Login extends javax.swing.JFrame {
         btSenha = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         btLogin = new javax.swing.JButton();
-        jPasswordField1 = new javax.swing.JPasswordField();
+        tfSenha = new javax.swing.JPasswordField();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -100,7 +104,7 @@ public class Login extends javax.swing.JFrame {
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(53, 53, 53)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, 360, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(tfSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 360, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                 .addComponent(tfLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 360, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(btSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 360, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -115,7 +119,7 @@ public class Login extends javax.swing.JFrame {
                 .addGap(53, 53, 53)
                 .addComponent(tfLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jPasswordField1, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
+                .addComponent(tfSenha, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
                 .addGap(63, 63, 63)
                 .addComponent(btLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -125,8 +129,6 @@ public class Login extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(17, 63, 64));
         jPanel1.setToolTipText("");
-
-        jLabel3.setIcon(new javax.swing.ImageIcon("C:\\Users\\natal\\OneDrive\\Documentos\\pi-2sem-2.0\\mineHash\\Design\\Logo\\miniHash.png")); // NOI18N
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -145,7 +147,7 @@ public class Login extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 75, Short.MAX_VALUE)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                    .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 0, Short.MAX_VALUE))
                 .addContainerGap())
         );
 
@@ -172,31 +174,31 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_btSenhaActionPerformed
 
     private void btLoginMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btLoginMouseEntered
-        btLogin.setBackground(new Color(17,63,64) );
-        
-        
+        btLogin.setBackground(new Color(17, 63, 64));
+
+
     }//GEN-LAST:event_btLoginMouseEntered
 
     private void btLoginMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btLoginMouseExited
-        btLogin.setBackground(new Color(5,13,14) );
+        btLogin.setBackground(new Color(5, 13, 14));
     }//GEN-LAST:event_btLoginMouseExited
 
     private void btLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btLoginActionPerformed
         Point p = this.getLocation();
         Login login = this;
 
-        new Thread(){
+        new Thread() {
             @Override
             public void run() {
-                try{
+                try {
                     for (int i = 0; i < 3; i++) {
-                        login.setLocation(p.x-5,p.y);
+                        login.setLocation(p.x - 5, p.y);
                         sleep(20);
-                        login.setLocation(p.x+5,p.y);
+                        login.setLocation(p.x + 5, p.y);
                         sleep(20);
 
                     }
-                    login.setLocation(p.x,p.y);
+                    login.setLocation(p.x, p.y);
                 } catch (InterruptedException ex) {
                     Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
                 }
@@ -204,16 +206,20 @@ public class Login extends javax.swing.JFrame {
             }
 
         }.start();
+        
+        getTfLogin();
+        getTfSenha();
+        
     }//GEN-LAST:event_btLoginActionPerformed
 
     private void jPanel2MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel2MousePressed
         point.x = evt.getX();
-       point.y = evt.getY();
+        point.y = evt.getY();
     }//GEN-LAST:event_jPanel2MousePressed
 
     private void jPanel2MouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel2MouseDragged
         Point p = this.getLocation();
-        this.setLocation(p.x + evt.getX() - point.x,p.y + evt.getY() - point.y);
+        this.setLocation(p.x + evt.getX() - point.x, p.y + evt.getY() - point.y);
     }//GEN-LAST:event_jPanel2MouseDragged
 
     /**
@@ -223,7 +229,7 @@ public class Login extends javax.swing.JFrame {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+        * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
@@ -242,18 +248,25 @@ public class Login extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-
         /* Create and display the form */
-        
-        
-        
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new Login().setVisible(true);
+                                         
             }
         });
-    }{
-}
+        
+        
+    }
+    
+    public JTextField getTfLogin() {
+        return tfLogin;
+    }
+
+    public JPasswordField getTfSenha() {
+        return tfSenha;
+    }
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btLogin;
@@ -263,7 +276,7 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JTextField tfLogin;
+    private javax.swing.JPasswordField tfSenha;
     // End of variables declaration//GEN-END:variables
 }
