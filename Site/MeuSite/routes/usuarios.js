@@ -95,9 +95,10 @@ router.post('/cadastrar', function (req, res, next) {
 
       banco.sql.query(`insert into tb_minerador (nm_minerador,nu_cpf, data_nasci, nu_telefone, endereco_numero,
          endereco_cep, endereco_nome, endereco_cidade, endereco_bairro,
-          endereco_apelido,email_minerador, senha_minerador ) values ('${nome_usuario}','${cpf_cnpj_usuario}','${data_usuario},'${contato_usuario}',
-           '${numero_endereco}', '${cep}', '${nome_endereco}', '${cidade}', '${bairro}',
-            '${apelido}', '${email_usuario}', '${senha_usuario}')`).then(function () {
+          endereco_apelido,email_minerador, senha_minerador ) values ('${nome_usuario}','${cpf_cnpj_usuario}',
+          '${data_usuario},'${contato_usuario}','${numero_endereco}', '${cep}', '${nome_endereco}', 
+          '${cidade}', '${bairro}','${apelido}', '${email_usuario}',
+           '${senha_usuario}')`).then(function () {
         console.log(`Cadastro criado com sucesso!`);
         res.sendStatus(201);
         // status 201 significa que algo foi criado no back-end, 
