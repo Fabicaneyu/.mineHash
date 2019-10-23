@@ -1,40 +1,25 @@
-function validacao() {
-    // if (nome_usuario.value != "" && email.value != "" && telefone_usuario.value != "" && cpf_usuario.value != "" &&
-    //     senha_usuario.value != "" && conf.value != ""&& confirmacao_senha.value != "") {
-    //         if (senha_usuario.value.length < 8) {
-    //             alert('A senha deve conter 8 ou mais caracteres')
-    //             senha_usuario.value = "";
-    //         }
-    //     if (senha_usuario.value != confirmacao_senha.value) {
-    //         alert('Por favor confirme a senha corretamente');
-    //         confirmacao_senha.value="";
-    //     }
-    //     else if(cb_termos.checked == false){
-    //         alert('Por favor aceite os termos de uso');
-    //     }
-    //     else {
-            cadastrar();
-        
-    // }
-    // else {
-    //     alert('Por favor preencha todos os campos');
-    // }
+function verificacao() {
+    if (nome_usuario == "" || data_usuario == "" || cpf_cnpj_usuario == "" || contato_usuario == "" ||
+        cep == "" || cidade == "" || bairro == "" || uf == "" || numero_endereco == "" ||
+        rua == "" || senha_usuario == "" || email_usuario == "") {
+
+        alert('Por favor preencha todos os campos');
+
+    }
+    else {
+        cadastrar();
+
+    }
+
 
 }
-
-    
-    
-    
-        
-
-    
 
 
 
 function cadastrar() {
     console.log('EFETUANDO CADASTRO');
 
-    aguardar();
+    espera();
     var formulario = new URLSearchParams(new FormData(modal_cadastro));
     fetch('/usuarios/cadastrar', {
         method: "POST",
@@ -42,17 +27,20 @@ function cadastrar() {
     }).then(function (response) {
 
         if (response.ok) {
-            aguardar();
+            // espera();
             console.log('Entrou na função cadastrar');
-           
+
             response.json().then(function (resposta) {
-                if (resposta == false) {
+                if (resposta = false) {
                     alert('Algo deu errado!');
-                    finalizar_aguardar();
+                    finalizar_espera();
+                    
                 } else {
                     // alert('Usuário cadastrado com sucesso!').then(function () {
-                        // sessionStorage.ID_USUARIO = resposta.id;
-                         window.location.href = 'dashboard.html';
+                    // sessionStorage.ID_USUARIO = resposta.id;
+                    window.location.href = 'dashboard.html';
+                    sessionStorage.email_usuario = resposta.EMAIL;
+                    sessionStorage.senha_usuario = resposta.SENHA;  
                     // })
                 }
 
@@ -62,20 +50,20 @@ function cadastrar() {
 
             console.log('Erro de cadastro!');
             console.log('Não entrou na função cadastrar');
-            finalizar_aguardar();
+            finalizar_espera();
         }
     });
 
     return false;
 }
 
-function aguardar() {
+function espera() {
     btn_cadastrar.disabled = true;
 
 
 }
 
-function finalizar_aguardar() {
+function finalizar_espera() {
     btn_cadastrar.disabled = false;
 
 
