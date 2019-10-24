@@ -1247,7 +1247,7 @@ fieldset[disabled] .form-control {
     display: block;
     z-index: 3;
     content: "";
-    opacity: .7;
+    opacity: .8;
     background: #333;
 }
 
