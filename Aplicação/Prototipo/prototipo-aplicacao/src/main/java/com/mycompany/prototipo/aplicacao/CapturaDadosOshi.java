@@ -36,11 +36,9 @@ public class CapturaDadosOshi {
     String memoriaTotal;
     String memoriaDisp;
     String sistemaOperacional;
-    List<OSProcess> listaProcessos;
-    OSProcess procs;
-    int[] idProcesso = new int[10];
-    String[] nomeProcesso = new String[10];
-    int[] prioridadeProcesso = new int[10];
+    
+
+    
 
     public CapturaDadosOshi() {
 
@@ -53,45 +51,17 @@ public class CapturaDadosOshi {
         memoriaTotal = FormatUtil.formatBytes(hal.getMemory().getTotal());
         memoriaDisp = FormatUtil.formatBytes(hal.getMemory().getAvailable());
         sistemaOperacional = si.getOperatingSystem().getFamily();
-        listaProcessos = Arrays.asList(os.getProcesses(10, OperatingSystem.ProcessSort.CPU));
+        
 
-        for (int i = 0; i < 10; i++) {
-            procs = listaProcessos.get(i);
-            idProcesso[i] = procs.getProcessID();
-            nomeProcesso[i] = procs.getName();
-            prioridadeProcesso[i] = procs.getPriority();
-
-//            System.out.println(procs);
-            System.out.println(idProcesso[i]);
-            System.out.println(nomeProcesso[i]);
-            System.out.println(prioridadeProcesso[i]);
-//            procs.getUserTime();
-//            procs.getKernelTime();
-//            procs.getUpTime();
-
-//            System.out.println("NAME: " + processos.getName());
-//            System.out.println("PID: " + processos.getProcessID());
-//            System.out.println("USER TIME: " + processos.getUserTime());
-//            System.out.println("KERNEL TIME: " + processos.getKernelTime());
-//            System.out.println("PRIORIDADE: " + processos.getPriority());
-//            System.out.println("UP TIME: " + processos.getUpTime() + "\n\n");
-        }
+      
     }
 
-    public static void main(String[] args) {
-        CapturaDadosOshi teste = new CapturaDadosOshi();
-        teste.getIdProcesso();
-        teste.getNomeProcesso();
-        teste.getPrioridadeProcesso();
-    }
 
     // aqui estão os nossos "getters". Agora nós retornamos os valores dos atributos
     // após a execução dos métodos do oshi
-
     public String getHostname() {
         return hostname;
     }
-    
 
     public String getFabricante() {
         return fabricante;
@@ -128,16 +98,8 @@ public class CapturaDadosOshi {
 //    public Integer[] getPrioridadeProcesso() {
 //        return prioridadeProcesso;
 //    }
-    public int[] getIdProcesso() {
-        return idProcesso;
-    }
 
-    public String[] getNomeProcesso() {
-        return nomeProcesso;
-    }
-
-    public int[] getPrioridadeProcesso() {
-        return prioridadeProcesso;
-    }
+ 
+   
 
 }
