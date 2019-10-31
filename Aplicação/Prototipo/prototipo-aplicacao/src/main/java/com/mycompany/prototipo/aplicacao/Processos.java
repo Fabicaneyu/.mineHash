@@ -16,57 +16,40 @@ public class Processos extends CapturaDadosOshi {
     Integer idProcesso;
     String nomeProcesso;
     Integer prioridadeProcesso;
+    ConexaoBanco conexaoBanco = new ConexaoBanco();
 //    int[] idProcesso = new int[10];
 //    String[] nomeProcesso = new String[10];
 //    int[] prioridadeProcesso = new int[10];
 
     public Processos() {
-        
+
         listaProcessos = Arrays.asList(os.getProcesses(10, OperatingSystem.ProcessSort.CPU));
-        
-        
 
     }
-    
-   
-   public static void main(String[] args) {
-        Processos teste = new Processos();
-        teste.puxarProcessos();
-        teste.getIdProcesso();
-        teste.getNomeProcesso();
-        teste.getPrioridadeProcesso();
-        
-        
-        
 
-    }
-   
-    public void puxarProcessos() {
-        
-          for (int i = 0; i < 10; i++) {
+    public void enviarProcessos() {
+
+        conexaoBanco.montarConexao();
+
+        for (int i = 0; i < 10; i++) {
 
             procs = listaProcessos.get(i);
             idProcesso = procs.getProcessID();
             nomeProcesso = procs.getName();
             prioridadeProcesso = procs.getPriority();
 
-
             System.out.println(idProcesso);
             System.out.println(nomeProcesso);
             System.out.println(prioridadeProcesso);
             System.out.println("");
-//            procs.getUserTime();
-//            procs.getKernelTime();
-//            procs.getUpTime();
 
-//            System.out.println("NAME: " + processos.getName());
-//            System.out.println("PID: " + processos.getProcessID());
-//            System.out.println("USER TIME: " + processos.getUserTime());
-//            System.out.println("KERNEL TIME: " + processos.getKernelTime());
-//            System.out.println("PRIORIDADE: " + processos.getPriority());
-//            System.out.println("UP TIME: " + processos.getUpTime() + "\n\n");
+            conexaoBanco.template().update(
+                    "insert into tb_processo (pid, nome_processo, prioridade) values (?,?,?)",
+                    idProcesso, nomeProcesso, prioridadeProcesso
+            );
+
         }
-        
+
     }
 
     public Integer getIdProcesso() {
@@ -80,9 +63,12 @@ public class Processos extends CapturaDadosOshi {
     public String getNomeProcesso() {
         return nomeProcesso;
     }
-
-   
     
-  
+    
+//        public static void main(String[] args) {
+//        Processos teste = new Processos();
+//        teste.enviarProcessos();
+//
+//    }
 
 }

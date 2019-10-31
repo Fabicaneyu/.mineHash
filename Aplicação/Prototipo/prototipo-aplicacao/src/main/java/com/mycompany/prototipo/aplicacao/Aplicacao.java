@@ -12,7 +12,7 @@ public class Aplicacao {
         conectar.montarConexao();
         dados.enviarDados();
         
-//      relatorio.enviarSMS();
+      relatorio.enviarSMS();
 
         System.out.println(conectar.template().queryForList("select * from tb_processo"));
     }
