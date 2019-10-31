@@ -2,7 +2,7 @@ package com.mycompany.prototipo.aplicacao;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
-import java.util.Scanner;
+//import java.util.Scanner;
 
 /**
  *
@@ -10,36 +10,35 @@ import java.util.Scanner;
  */
 public class MatarProcessos extends Processos {
 
-    public static void main(String[] args) {
-        // TODO Auto-generated method stub
-        MatarProcessos teste = new MatarProcessos();
-        teste.puxarProcesso();
-        
-        Scanner leitor = new Scanner(System.in);
-
-        System.out.println("Qual o PID do processo que deseja matar?");
-        String inputProcId = leitor.nextLine();
-        teste.kill(inputProcId);
-
-    }
-
-    public void puxarProcesso() {
-
-        for (int i = 0; i < 10; i++) {
-
-            procs = listaProcessos.get(i);
-            idProcesso = procs.getProcessID();
-            nomeProcesso = procs.getName();
-            prioridadeProcesso = procs.getPriority();
-
-            System.out.println(idProcesso);
-            System.out.println(nomeProcesso);
-            System.out.println(prioridadeProcesso);
-            System.out.println("");
-
-        }
-
-    }
+//    public static void main(String[] args) {
+//        // TODO Auto-generated method stub
+//        MatarProcessos teste = new MatarProcessos();
+//        teste.puxarProcesso();
+//        
+//        Scanner leitor = new Scanner(System.in);
+//
+//        System.out.println("Qual o PID do processo que deseja matar?");
+//        String inputProcId = leitor.nextLine();
+//        teste.kill(inputProcId + ".exe");
+//
+//    }
+//    public void puxarProcesso() {
+//
+//        for (int i = 0; i < 10; i++) {
+//
+//            procs = listaProcessos.get(i);
+//            idProcesso = procs.getProcessID();
+//            nomeProcesso = procs.getName();
+//            prioridadeProcesso = procs.getPriority();
+//
+//            System.out.println(idProcesso);
+//            System.out.println(nomeProcesso);
+//            System.out.println(prioridadeProcesso);
+//            System.out.println("");
+//
+//        }
+//
+//    }
 
     public static boolean kill(String processo) {
         try {

@@ -16,10 +16,8 @@ public class Processos extends CapturaDadosOshi {
     Integer idProcesso;
     String nomeProcesso;
     Integer prioridadeProcesso;
+
     ConexaoBanco conexaoBanco = new ConexaoBanco();
-//    int[] idProcesso = new int[10];
-//    String[] nomeProcesso = new String[10];
-//    int[] prioridadeProcesso = new int[10];
 
     public Processos() {
 
@@ -27,7 +25,7 @@ public class Processos extends CapturaDadosOshi {
 
     }
 
-    public void enviarProcessos() {
+    public void enviarProcessosBanco() {
 
         conexaoBanco.montarConexao();
 
@@ -52,23 +50,45 @@ public class Processos extends CapturaDadosOshi {
 
     }
 
-    public Integer getIdProcesso() {
-        return idProcesso;
+    public void enviarProcessosSwing(int id[], String nome[], int prio[]) {
+
+        conexaoBanco.montarConexao();
+
+        for (int i = 0; i < 10; i++) {
+
+            procs = listaProcessos.get(i);
+            id[i] = procs.getProcessID();
+            nome[i] = procs.getName();
+            prio[i] = procs.getPriority();
+
+//            System.out.println(idSwing[i]);
+//            System.out.println(nomeSwing[i]);
+//            System.out.println(prioridadeSwing[i]);
+//            System.out.println("");
+        }
+
     }
 
-    public Integer getPrioridadeProcesso() {
-        return prioridadeProcesso;
-    }
-
-    public String getNomeProcesso() {
-        return nomeProcesso;
-    }
-    
-    
-//        public static void main(String[] args) {
+//    public Integer getIdProcesso() {
+//        return idProcesso;
+//    }
+//
+//    public Integer getPrioridadeProcesso() {
+//        return prioridadeProcesso;
+//    }
+//
+//    public String getNomeProcesso() {
+//        return nomeProcesso;
+//    }
+//    public static void main(String[] args) {
 //        Processos teste = new Processos();
-//        teste.enviarProcessos();
+//        teste.enviarProcessosSwing();
+//        
+//        System.out.println(Arrays.toString(teste.getNomeSwing()));
+//        System.out.println(Arrays.toString(teste.getPrioridadeSwing()));
+//        System.out.println(Arrays.toString(teste.getIdSwing()));
+//        
+//        System.out.println("");
 //
 //    }
-
 }
