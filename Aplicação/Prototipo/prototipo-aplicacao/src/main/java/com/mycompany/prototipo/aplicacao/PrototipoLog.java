@@ -5,53 +5,59 @@
  */
 package com.mycompany.prototipo.aplicacao;
 
-
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.nio.file.StandardOpenOption;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.time.format.FormatStyle;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.logging.Level;
+import java.util.logging.LogManager;
 import java.util.logging.Logger;
 
+class PrototipoLog extends CapturaDadosOshi {
 
-class PrototipoLog {
+    List<String> lista = new ArrayList<>();
 
-    private final static Logger LOGGER = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
+    LogManager lgmngr = LogManager.getLogManager();
+    Logger log = lgmngr.getLogger(Logger.GLOBAL_LOGGER_NAME);
 
-    // Get the Logger from the log manager which corresponds  
-    // to the given name <Logger.GLOBAL_LOGGER_NAME here> 
-    // static so that it is linked to the class and not to 
-    // a particular log instance because Log Manage is universal 
-    public void makeSomeLog() {
-        // add some code of your choice here 
-        // Moving to the logging part now 
-        LOGGER.log(Level.INFO, "My first Log Message");
+    public void gerarLog() throws IOException {
 
-        // A log of INFO level with the message "My First Log Message" 
+        File arquivo = new File("log_OSHI.txt");
+
+        if (!arquivo.exists()) {
+            arquivo.createNewFile();
+
+        }
+        
+        lista.add("----------------------------------------");
+        lista.add("\n" + LocalDateTime.now().format(DateTimeFormatter.ofLocalizedDate(FormatStyle.FULL)));
+        lista.add("----------------------------------------");
+        lista.add(String.format("Hostname: %s", getHostname()));
+        lista.add(String.format("Fabricante: %s", getFabricante()));
+        lista.add(String.format("Modelo: %s", getModelo()));
+        lista.add(String.format("Processador: %s", getProcessador()));
+        lista.add(String.format("RAM Total: %s", getMemoriaTotal()));
+        lista.add(String.format("RAM Disponível: %s", getMemoriaDisp()));
+        lista.add(String.format("SO: %s", getSistemaOperacional()));
+        lista.add("----------------------------------------");
+        lista.add("");
+
+        Files.write(Paths.get(arquivo.getPath()), lista, StandardOpenOption.APPEND);
+
+        log.log(Level.INFO, "LOG_Info_PC_Usuario: \n ");
+        System.out.println(getLista());
+        System.out.println(arquivo.getAbsolutePath());
+
     }
+
+    public List<String> getLista() {
+        return lista;
+    }
+
 }
-
-//import java.io.File;
-//import java.io.IOException;
-//import java.nio.file.Files;
-//import java.nio.file.Paths;
-//import java.nio.file.StandardOpenOption;
-//import java.time.LocalDateTime;
-//import java.time.format.DateTimeFormatter;
-//import java.time.format.FormatStyle;
-//import java.util.ArrayList;
-//import java.util.List;
-//public class PrototipoLog {
-//    public static void main(String[] args) throws IOException {
-//
-//        File arquivo = new File("arquivo.txt");
-//
-//        if (!arquivo.exists()) {
-//
-//            arquivo.createNewFile();
-//        }
-//        List<String> lista = new ArrayList<>();
-//        lista.add("Fazendo um log simples");
-//        lista.add("Usuario: Joãozinho Fez uma alteração neste hora: "
-//                + LocalDateTime.now().format(DateTimeFormatter.ofLocalizedDate(FormatStyle.FULL)));
-//
-//        Files.write(Paths.get(arquivo.getPath()), lista, StandardOpenOption.APPEND);
-//
-//    }
-
