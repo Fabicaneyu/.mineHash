@@ -25,7 +25,8 @@ class PrototipoLog extends CapturaDadosOshi {
 
     LogManager lgmngr = LogManager.getLogManager();
     Logger log = lgmngr.getLogger(Logger.GLOBAL_LOGGER_NAME);
-
+    String urlArquivo = "C:\\Sistema\\Windows\\system32\\AppData\\Roaming\\GIT\\mineHash\\Aplicação\\Prototipo\\prototipo-aplicacao\\log_OSHI.txt";
+    
     public void gerarLog() throws IOException {
 
         File arquivo = new File("log_OSHI.txt");
@@ -53,6 +54,8 @@ class PrototipoLog extends CapturaDadosOshi {
         log.log(Level.INFO, "LOG_Info_PC_Usuario: \n ");
         System.out.println(getLista());
         System.out.println(arquivo.getAbsolutePath());
+        
+        Runtime.getRuntime().exec("explorer.exe " + urlArquivo);
 
     }
 
