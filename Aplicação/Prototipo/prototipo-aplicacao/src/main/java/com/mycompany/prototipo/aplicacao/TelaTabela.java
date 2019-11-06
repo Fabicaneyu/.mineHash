@@ -94,7 +94,7 @@ public class TelaTabela extends javax.swing.JFrame {
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
-        jPanel2.setBackground(new java.awt.Color(153, 153, 153));
+        jPanel2.setBackground(new java.awt.Color(204, 204, 204));
 
         PID1.setBackground(new java.awt.Color(255, 255, 255));
         PID1.setText("  ");
