@@ -1,0 +1,49 @@
+06 Nov 2019 19:37:30,626 [main] FATAL ERR - Message 0
+06 Nov 2019 19:37:30,629 [main] ERROR ERR - Message 1
+06 Nov 2019 19:37:30,629 [main] FATAL INF - Message 2
+06 Nov 2019 19:37:30,629 [main] ERROR INF - Message 3
+06 Nov 2019 19:37:30,629 [main] WARN INF - Message 4
+06 Nov 2019 19:37:30,629 [main] INFO INF - Message 5
+06 Nov 2019 19:37:30,629 [main] FATAL INF.UNDEF - Message 6
+06 Nov 2019 19:37:30,630 [main] ERROR INF.UNDEF - Message 7
+06 Nov 2019 19:37:30,630 [main] WARN INF.UNDEF - Message 8
+06 Nov 2019 19:37:30,630 [main] INFO INF.UNDEF - Message 9
+06 Nov 2019 19:37:30,630 [main] FATAL INF.ERR - Message 10
+06 Nov 2019 19:37:30,630 [main] ERROR INF.ERR - Message 11
+06 Nov 2019 19:37:30,630 [main] FATAL INF.ERR.UNDEF - Message 12
+06 Nov 2019 19:37:30,722 [main] ERROR INF.ERR.UNDEF - Message 13
+06 Nov 2019 19:37:30,722 [main] FATAL DEB - Message 14
+06 Nov 2019 19:37:30,722 [main] ERROR DEB - Message 15
+06 Nov 2019 19:37:30,722 [main] WARN DEB - Message 16
+06 Nov 2019 19:37:30,722 [main] INFO DEB - Message 17
+06 Nov 2019 19:37:30,722 [main] DEBUG DEB - Message 18
+06 Nov 2019 19:37:30,723 [main] FATAL TRC - Message 19
+06 Nov 2019 19:37:30,723 [main] ERROR TRC - Message 20
+06 Nov 2019 19:37:30,723 [main] WARN TRC - Message 21
+06 Nov 2019 19:37:30,723 [main] INFO TRC - Message 22
+06 Nov 2019 19:37:30,723 [main] DEBUG TRC - Message 23
+06 Nov 2019 19:37:30,723 [main] TRACE TRC - Message 24
+06 Nov 2019 19:37:30,723 [main] FATAL UNDEF - Message 25
+06 Nov 2019 19:37:30,723 [main] ERROR UNDEF - Message 26
+06 Nov 2019 19:37:30,723 [main] WARN UNDEF - Message 27
+06 Nov 2019 19:37:30,723 [main] INFO UNDEF - Message 28
+06 Nov 2019 19:37:30,723 [main] DEBUG UNDEF - Message 29
+java.lang.Exception: Just testing.
+	at org.apache.log4j.MinimumTestCase.common(MinimumTestCase.java:171)
+	at org.apache.log4j.MinimumTestCase.ttcc(MinimumTestCase.java:89)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at junit.framework.TestCase.runTest(TestCase.java:154)
+	at junit.framework.TestCase.runBare(TestCase.java:127)
+	at junit.framework.TestResult$1.protect(TestResult.java:106)
+	at junit.framework.TestResult.runProtected(TestResult.java:124)
+	at junit.framework.TestResult.run(TestResult.java:109)
+	at junit.framework.TestCase.run(TestCase.java:118)
+	at junit.framework.TestSuite.runTest(TestSuite.java:208)
+	at junit.framework.TestSuite.run(TestSuite.java:203)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.run(JUnitTestRunner.java:297)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.launch(JUnitTestRunner.java:672)
+	at org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner.main(JUnitTestRunner.java:567)
+06 Nov 2019 19:37:30,724 [main] INFO INF - Messages should bear numbers 0 through 29.
