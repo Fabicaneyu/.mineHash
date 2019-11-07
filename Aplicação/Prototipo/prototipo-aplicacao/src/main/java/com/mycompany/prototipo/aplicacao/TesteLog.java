@@ -15,6 +15,8 @@ public class TesteLog {
     public static void main(String[] args) throws IOException {
         PrototipoLog obj = new PrototipoLog();
         obj.gerarLog();
+        
+        
 
     }
 }

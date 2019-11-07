@@ -25,19 +25,23 @@ class PrototipoLog extends CapturaDadosOshi {
 
     LogManager lgmngr = LogManager.getLogManager();
     Logger log = lgmngr.getLogger(Logger.GLOBAL_LOGGER_NAME);
-    String urlArquivo = "C:\\Sistema\\Windows\\system32\\AppData\\Roaming\\GIT\\mineHash\\Aplicação\\Prototipo\\prototipo-aplicacao\\log_OSHI.txt";
+
+    LocalDateTime periodo = LocalDateTime.now();
+    
+    DateTimeFormatter data = DateTimeFormatter.ofPattern("yyyy_MM_dd");
+    DateTimeFormatter hora = DateTimeFormatter.ofPattern("HH-mm");
+    
+    String formatData = periodo.format(data);
+    String formatHora = periodo.format(hora);
     
     public void gerarLog() throws IOException {
 
-        File arquivo = new File("log_OSHI.txt");
+        File arquivo = new File("data - " + formatData + "- hora - " + formatHora + ".log");
 
-        if (!arquivo.exists()) {
-            arquivo.createNewFile();
-
-        }
-        
+        arquivo.createNewFile();
+        String urlArquivo = arquivo.getAbsolutePath();
         lista.add("----------------------------------------");
-        lista.add("\n" + LocalDateTime.now().format(DateTimeFormatter.ofLocalizedDate(FormatStyle.FULL)));
+        lista.add("\n" + LocalDateTime.now().format(DateTimeFormatter.ofLocalizedDate(FormatStyle.SHORT)));
         lista.add("----------------------------------------");
         lista.add(String.format("Hostname: %s", getHostname()));
         lista.add(String.format("Fabricante: %s", getFabricante()));
@@ -54,7 +58,7 @@ class PrototipoLog extends CapturaDadosOshi {
         log.log(Level.INFO, "LOG_Info_PC_Usuario: \n ");
         System.out.println(getLista());
         System.out.println(arquivo.getAbsolutePath());
-        
+
         Runtime.getRuntime().exec("explorer.exe " + urlArquivo);
 
     }
