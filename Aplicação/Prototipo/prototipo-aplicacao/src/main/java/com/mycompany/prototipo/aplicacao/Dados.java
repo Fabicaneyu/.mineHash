@@ -6,15 +6,17 @@ public class Dados extends CapturaDadosOshi {
     // de dados ao banco
     ConexaoBanco conexaoBanco = new ConexaoBanco();
 
+   
     public void enviarDados() {
 
         conexaoBanco.montarConexao();
 
-//        conexaoBanco.template().update(
-//                "insert into Computador (hostname,fabricante,modelo,processador,memoriaTotal,memoriaDisp,"
-//                + "sistemaOperacional) values (?,?,?,?,?,?,?)",
-//                getHostname(), getFabricante(), getModelo(), getProcessador(),
-//                getMemoriaTotal(), getMemoriaDisp(), getSistemaOperacional());
+        conexaoBanco.template().update(
+                "insert into Computador (idComp,GPU,DISCO,RAM,Processador,SO,Hostname,Fabricante,Modelo,fkMinerador"
+                + ") values (,null,null,null,?,?,?,?,?,?,null)",
+               getMemoriaTotal() ,getProcessador(),getSistemaOperacional(), 
+               getHostname() ,getFabricante(), getModelo() 
+                 );
     }
 
 }
