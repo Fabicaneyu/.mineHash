@@ -2,6 +2,7 @@ package com.mycompany.prototipo.aplicacao;
 
 import java.util.Arrays;
 import java.util.List;
+import oshi.hardware.GlobalMemory;
 import oshi.software.os.OSProcess;
 import oshi.software.os.OperatingSystem;
 
@@ -16,6 +17,11 @@ public class Processos extends CapturaDadosOshi {
     Integer idProcesso;
     String nomeProcesso;
     Integer prioridadeProcesso;
+    String usuario;
+    String estadoProcesso;
+    String cpuPercentual;
+    Double memoriaPercentual;
+    GlobalMemory memoria;
 
     ConexaoBanco conexaoBanco = new ConexaoBanco();
 
@@ -25,27 +31,40 @@ public class Processos extends CapturaDadosOshi {
 
     }
 
+    public static void main(String[] args) {
+
+        Processos teste = new Processos();
+        teste.enviarProcessosBanco();
+
+    }
+
     public void enviarProcessosBanco() {
 
-        conexaoBanco.montarConexao();
-
+//        conexaoBanco.montarConexao();
+        
         for (int i = 0; i < 10; i++) {
 
             procs = listaProcessos.get(i);
+            usuario = procs.getUser();
             idProcesso = procs.getProcessID();
             nomeProcesso = procs.getName();
             prioridadeProcesso = procs.getPriority();
+            estadoProcesso = procs.getState().name();
+            cpuPercentual = String.format("%.2f", procs.calculateCpuPercent());
+//          memoriaPercentual = 100d * Double.valueOf(procs.getResidentSetSize()) / Double.valueOf(memoria.getTotal());
 
+            System.out.println(usuario);
             System.out.println(idProcesso);
             System.out.println(nomeProcesso);
             System.out.println(prioridadeProcesso);
-            System.out.println("");
+            System.out.println(estadoProcesso);
+            System.out.println(cpuPercentual + "%");
+            System.out.println("-------------");
 
-            conexaoBanco.template().update(
-                    "insert into tb_processo (pid, nome_processo, prioridade) values (?,?,?)",
-                    idProcesso, nomeProcesso, prioridadeProcesso
-            );
-
+//            conexaoBanco.template().update(
+//                    "insert into [dbo].[Processo] (PID, NomeProcesso, prioridade) values (?,?,?)",
+//                    idProcesso, nomeProcesso, prioridadeProcesso
+//            );
         }
 
     }
