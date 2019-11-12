@@ -1,7 +1,6 @@
 function verificacao() {
-    if (nome_usuario == "" || data_usuario == "" || cpf_cnpj_usuario == "" || contato_usuario == "" ||
-        cep == "" || cidade == "" || bairro == "" || uf == "" || numero_endereco == "" ||
-        rua == "" || senha_usuario == "" || email_usuario == "") {
+    if (nome_usuario.value == "" || data_usuario.value == "" || cpf_cnpj_usuario.value == "" || contato_usuario.value == "" ||
+        senha_usuario.value == "" || email_usuario.value == "") {
 
         alert('Por favor preencha todos os campos');
 
@@ -17,45 +16,55 @@ function verificacao() {
 
 
 function cadastrar() {
-    console.log('EFETUANDO CADASTRO');
 
     espera();
+    console.log('EFETUANDO CADASTRO');
+
+
     var formulario = new URLSearchParams(new FormData(modal_cadastro));
     fetch('/usuarios/cadastrar', {
         method: "POST",
         body: formulario
     }).then(function (response) {
 
+        console.log(`entrando no if response`);
+
+
         if (response.ok) {
-            // espera();
-            console.log('Entrou na função cadastrar');
+
+            console.log(`entrando`);
 
             response.json().then(function (resposta) {
-                if (resposta = false) {
-                    alert('Algo deu errado!');
+
+                console.log('tô antes do if(resposta "!= false)');
+                if (resposta != false) {
+                    console.log('entrei');
+                    console.log('Cadastrado com sucesso!');
+
+                    console.log(resposta);
                     finalizar_espera();
-                    
-                } else {
-                    // alert('Usuário cadastrado com sucesso!').then(function () {
-                    // sessionStorage.ID_USUARIO = resposta.id;
-                    window.location.href = 'dashboard.html';
-                    sessionStorage.email_usuario = resposta.EMAIL;
-                    sessionStorage.senha_usuario = resposta.SENHA;  
-                    // })
+                    window.location.href = "dashboard.html";
+
+                }
+                else{
+                    console.log('erro de cadastro DE NOVO');
                 }
 
 
+
             });
+
         } else {
 
+            console.log(response);
+
             console.log('Erro de cadastro!');
-            console.log('Não entrou na função cadastrar');
             finalizar_espera();
         }
     });
-
     return false;
 }
+
 
 function espera() {
     btn_cadastrar.disabled = true;
@@ -68,3 +77,4 @@ function finalizar_espera() {
 
 
 }
+

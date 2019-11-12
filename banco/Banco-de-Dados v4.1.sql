@@ -57,8 +57,8 @@ Temperatura decimal(5,2)
 )auto_increment = 100000;
 
 
-insert into Minerador values
-(null,"Gabriel Sutto Tinquim","1999-02-05","1195437387","48280129820",null,"gabrieltinquim@gmail.com","Titica123"); 
+insert into Minerador (Nome,dataNascimento,Telefone,CPF,CNPJ,Email,Senha) values
+('Gabriel Sutto Tinquim','1999-02-05','1195437387','48280129820',null,'gabrieltinquim@gmail.com','Titica123'); 
 
 insert into Endereco values
 (null,261,"Paulo di favari","São Bernardo","Rudge Ramos",1);

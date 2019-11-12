@@ -168,22 +168,22 @@
 
                                                 <div class="form-group">
                                                     <label for="Telefone" class="label-telefone-cel">Telefone/Celular</label><br>
-                                                    <input type="tel" class="form-control; input-login" id="contato_usuario" name="contato_usuario" placeholder="Contato">
+                                                    <input type="text" class="form-control; input-login" id="contato_usuario" name="contato_usuario" placeholder="Contato">
                                                 </div>
 
                                                 <div class="form-group">
                                                     <label for="cep">CEP</label><br>
-                                                    <input type="text" class="form-control; input-login" placeholder="CEP" name="cep" type="text" id="cep" value="" size="10" maxlength="9" onblur="pesquisacep(this.value);">
+                                                    <input class="form-control; input-login" placeholder="CEP" name="cep" type="text" id="cep" value="" size="10" maxlength="9" onblur="pesquisacep(this.value);">
                                                 </div>
 
                                                 <div class="form-group">
                                                     <label for="text">Cidade</label><br>
-                                                    <input type="text" class="form-control; input-login" name="cidade" type="text" id="cidade" name="cidade" size="40" placeholder="Cidade">
+                                                    <input class="form-control; input-login" type="text" id="cidade" name="cidade" size="40" placeholder="Cidade">
                                                 </div>
 
                                                 <div class="form-group">
                                                     <label for="text">Bairro</label><br>
-                                                    <input type="text" class="form-control; input-login" name="bairro" type="text" id="bairro" name="bairro" size="40" placeholder="Bairro">
+                                                    <input class="form-control; input-login" type="text" id="bairro" name="bairro" size="40" placeholder="Bairro">
                                                 </div>
 
                                                 <div class="form-group">
@@ -196,12 +196,12 @@
 
                                                 <div class="form-group">
                                                     <label for="text" class="label-endereco">Endereço</label><br>
-                                                    <input class="form-control; input-login" type="text" name="rua" type="text" id="rua" size="60">
+                                                    <input class="form-control; input-login" name="rua" type="text" id="rua" size="60">
                                                 </div>
 
                                                 <div class="form-group">
                                                     <label for="text">Estado</label><br>
-                                                    <input type="text" class="form-control; input-login" name="uf" type="text" id="uf" size="2">
+                                                    <input  class="form-control; input-login" name="uf" type="text" id="uf" size="2">
                                                 </div>
 
                                                 <div class="form-group">
@@ -218,7 +218,7 @@
                                             </form>
                                         </div>
                                         <div class="modal-footer; modal-botao">
-                                            <button type="button" class="btn btn-danger btn-fill" id="btn_cadastrar" onclick="">Cadastrar-se</button>
+                                            <button type="button" class="btn btn-danger btn-fill" id="btn_cadastrar" onclick="verificacao()">Cadastrar-se</button>
                                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
 
 

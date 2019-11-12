@@ -46,16 +46,17 @@ router.post('/cadastrar', function (req, res, next) {
   var data_usuario;
   var cpf_cnpj_usuario;
   var contato_usuario;
-  var cep;
-  var cidade;
-  var bairro;
-  var uf;
-  var numero_endereco;
-  var rua;
+  // var cep;
+  // var cidade;
+  // var bairro;
+  // var uf;
+  // var numero_endereco;
+  // var rua;
   var senha_usuario;
   var email_usuario;
-  var apelido;
-  var cadastro_valido;
+  var senha_usuario_a;
+  // var apelido;
+
 
 
 
@@ -69,43 +70,63 @@ router.post('/cadastrar', function (req, res, next) {
     data_usuario = req.body.data_usuario; // depois de .body, use o nome (name) do campo em seu formulário de login
     cpf_cnpj_usuario = req.body.cpf_cnpj_usuario; // depois de .body, use o nome (name) do campo em seu formulário de login
     contato_usuario = req.body.contato_usuario; // depois de .body, use o nome (name) do campo em seu formulário de login
-    cep = req.body.cep; // depois de .body, use o nome (name) do campo em seu formulário de login
-    cidade = req.body.cidade; // depois de .body, use o nome (name) do campo em seu formulário de login
-    bairro = req.body.bairro; // depois de .body, use o nome (name) do campo em seu formulário de login
-    uf = req.body.uf; // depois de .body, use o nome (name) do campo em seu formulário de login
-    numero_endereco = req.body.numero_endereco; // depois de .body, use o nome (name) do campo em seu formulário de login
-    rua = req.body.rua; // depois de .body, use o nome (name) do campo em seu formulário de login
+    // cep = req.body.cep; // depois de .body, use o nome (name) do campo em seu formulário de login
+    // cidade = req.body.cidade; // depois de .body, use o nome (name) do campo em seu formulário de login
+    // bairro = req.body.bairro; // depois de .body, use o nome (name) do campo em seu formulário de login
+    // uf = req.body.uf; // depois de .body, use o nome (name) do campo em seu formulário de login
+    // numero_endereco = req.body.numero_endereco; // depois de .body, use o nome (name) do campo em seu formulário de login
+    // rua = req.body.rua; // depois de .body, use o nome (name) do campo em seu formulário de login
     senha_usuario = req.body.senha_usuario; // depois de .body, use o nome (name) do campo em seu formulário de login
     email_usuario = req.body.email_usuario; // depois de .body, use o nome (name) do campo em seu formulário de login
-    apelido = req.body.apelido;
+    // apelido = req.body.apelido;
 
 
 
 
 
-    if (nome_usuario == undefined || data_usuario == undefined || cpf_cnpj_usuario == undefined || contato_usuario == undefined ||
-      cep == undefined || cidade == undefined || bairro == undefined || uf == undefined || numero_endereco == undefined ||
-      rua == undefined || senha_usuario == undefined || email_usuario == undefined) {
+
+    if (nome_usuario == undefined || data_usuario == undefined || cpf_cnpj_usuario == undefined ||
+      contato_usuario == undefined || senha_usuario == undefined || email_usuario == undefined) {
       // coloque a frase de erro que quiser aqui. Ela vai aparecer no formulário de cadastro
       throw new Error(`Dados de cadastro não chegaram completos`);
+
     }
-    return banco.sql.query(`insert into tb_minerador (nm_minerador,nu_cpf, data_nasci, nu_telefone, endereco_numero,
-      endereco_cep, endereco_nome, endereco_cidade, endereco_bairro,
-       endereco_apelido,email_minerador, senha_minerador ) values ('${nome_usuario}','${cpf_cnpj_usuario}','${data_usuario},'${contato_usuario}',
-        '${numero_endereco}', '${cep}', '${rua}', '${cidade}', '${bairro}',
-         '${apelido}', '${email_usuario}', '${senha_usuario}')`);
+    else {
+
+      return banco.sql.query(`insert into Minerador (Nome,dataNascimento,Telefone,CPF,CNPJ,Email,Senha) values
+    ('${nome_usuario}','${data_usuario}','${contato_usuario}','${cpf_cnpj_usuario}',null,'${email_usuario}', '${senha_usuario}')`);
+
+    }
   }).then(consulta => {
 
-    if (consulta.recordset[0] >= 1) {
-      // res.status(400).send(`Já existe usuário com o login "${login}"`);
-      res.status(400).send(`Erro 400 ${email_usuario}`);
-      return;
-    } else {
-      console.log('válido!');
-      cadastro_valido = true;
-    }
+
+    res.status(200).send();
+    return true;
+    console.log(consulta.idMinerador);
+    console.log(`Validando cadastro...`);
+    console.log('válido!');
+    
+
+
+
+
+
+
+
+
+
+
+    // if (consulta.recordset[0] >= 1) {
+    //   // res.status(400).send(`Já existe usuário com o login "${login}"`);
+    //   res.status(400).send(`Erro 400 ${email_usuario}`);
+    //   return;
+    // } else {
+    //   
+
+    // }
 
   }).catch(err => {
+
     console.error(`Erro no cadastro: ${err}`);
     res.status(500).send(`Erro no cadastro: ${err}`);
 
@@ -125,10 +146,10 @@ router.post('/cadastrar', function (req, res, next) {
     //     res.status(500).send(erro);
 
     //   }).finally(() => {
-        
+
     //   });
     // }
-    
+
   });
 
 
