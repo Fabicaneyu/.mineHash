@@ -11,34 +11,47 @@ import com.profesorfalken.jsensors.model.components.Cpu;
 import com.profesorfalken.jsensors.model.components.Gpu;
 import com.profesorfalken.jsensors.model.sensors.Fan;
 import com.profesorfalken.jsensors.model.sensors.Temperature;
-import java.util.List;
+import java.util.*;
 
 /**
  *
  * @author gsramos
  */
 public class JsensorTeste {
-        Components components = JSensors.get.components();
+    
+        public static void main(String[] args) {
 
-    List<Gpu> gpus = components.gpus;
-    if (gpus != null) {
-        for (final Gpu gpu : gpus) {
-            System.out.println("Found CPU component: " + gpu.name);
-            if (gpu.sensors != null) {
-              System.out.println("Sensors: ");
-  
-              //Print temperatures
-              List<Temperature> temps = gpu.sensors.temperatures;
-              for (final Temperature temp : temps) {
-                  System.out.println(temp.name + ": " + temp.value + " C");
-              }
-  
-              //Print fan speed
-              List<Fan> fans = gpu.sensors.fans;
-              for (final Fan fan : fans) {
-                  System.out.println(fan.name + ": " + fan.value + " RPM");
-              }
+
+        Map<String, String> overridenConfig = new HashMap<String, String>();
+        overridenConfig.put("debugMode", "false");
+
+        Components components = JSensors.get.config(overridenConfig).components();
+
+        List<Cpu> gpus = components.cpus;
+        if (gpus != null) {
+            for (final Cpu gpu : gpus) {
+                System.out.println("Found CPU component: " + gpu.name);
+                if (gpu.sensors != null) {
+                    System.out.println("Sensors: ");
+
+                    //Print temperatures
+                    List<Temperature> temps = gpu.sensors.temperatures;
+                    for (final Temperature temp : temps) {
+                        System.out.println(temp.name + ": " + temp.value + " C");
+                    }
+
+                    //Print fan speed
+                    List<Fan> fans = gpu.sensors.fans;
+                    for (final Fan fan : fans) {
+                        System.out.println(fan.name + ": " + fan.value + " RPM");
+                    }
+                }
             }
         }
+        
+            System.out.println("Terminou");
+            return ;
+            
+
     }
 }
