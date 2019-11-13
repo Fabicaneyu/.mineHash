@@ -24,7 +24,7 @@ import java.util.List;
 public class MineHashAlertBot {
     
     public static void main(String[] args) {
-        String BOT_TOKEN = "012257387:AAF8xff_JpByswgxmmoS3X3nAFT3qxTAYAE";
+        String BOT_TOKEN = "";
         String BOT_USERNAME = "MineHash Alerts";
         Integer BOT_OWNERID = null;
         Long LAST_CHAT_ID;
