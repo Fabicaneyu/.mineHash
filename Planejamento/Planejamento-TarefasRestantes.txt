@@ -1,0 +1,30 @@
+Fabi: Coluna telegram
+	Azure
+      Tela swing + oshi
+	BD populado informações para exemplo
+
+Yuri: Dashboard
+	Integração com Slack/Telegram
+
+Gabriel/Leo:Oshi totalmenteFuncional 
+	Dados 100% sendo populados em BD
+
+
+
+Nathy: PPT
+       Diagrama de classes
+	Diagrama de sequencia
+	Site
+
+
+
+
+
+
+
+
+Jar executavel
+Script instalação
+
+
+Testes integrados, realizados	
