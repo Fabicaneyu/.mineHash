@@ -7,6 +7,7 @@ package com.mycompany.prototipo.aplicacao;
 
 //import org.slf4j.Logger;
 //import org.slf4j.LoggerFactory;
+
 import java.util.Arrays;
 import java.util.List;
 import oshi.SystemInfo;
@@ -29,6 +30,7 @@ public class CapturaDadosOshi {
     String memoriaTotal;
     String memoriaDisp;
     String sistemaOperacional;
+   
 
     public CapturaDadosOshi() {
 
@@ -39,7 +41,7 @@ public class CapturaDadosOshi {
         memoriaTotal = FormatUtil.formatBytes(hal.getMemory().getTotal());
         memoriaDisp = FormatUtil.formatBytes(hal.getMemory().getAvailable());
         sistemaOperacional = si.getOperatingSystem().getFamily();
-
+        
     }
 
     public String getHostname() {
