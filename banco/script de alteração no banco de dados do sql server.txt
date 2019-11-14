@@ -1,0 +1,46 @@
+SQL server
+
+Adicionar coluna: 
+
+ALTER TABLE dbo.Minerador ADD Telegram CHAR(9);
+
+Ver tabelas:
+select * from dbo.Computador
+
+select * from dbo.Desempenho
+
+select * from dbo.Minerador
+
+select * from dbo.Process
+
+select * from dbo.Endereco
+
+Inserir dados:
+
+INSERT INTO dbo.Desempenho(fkComputador,CPUatual,RAMatual,DISCO,GPUatual,Temperatura)
+VALUES(1002,70,80,90,98,77),
+	  (1003,70,80,90,98,77),
+	  (1004,70,80,90,98,77);
+
+
+INSERT INTO dbo.Endereco (Numero,Rua,Cidade,Bairro,fkMinerador)
+VALUES(54,'Beleza Pura','São Paulo','Itaquera',2);
+
+INSERT INTO dbo.Endereco (Numero,Rua,Cidade,Bairro,fkMinerador)
+VALUES(595,'Hadock Lobo','São Paulo','Cerqueira Cesar',3);
+
+INSERT INTO dbo.Endereco (Numero,Rua,Cidade,Bairro,fkMinerador)
+VALUES(65,'Alameda Cleveland','São Paulo','Santa Cecília',4);
+
+
+Apagar linhas:
+
+delete from dbo.Desempenho where idDesempenho = 100000;
+
+
+
+referências: https://andrielleazevedo.wordpress.com/2011/06/03/inserindo-registros-em-tabelas-no-sql-server/
+
+e
+
+https://andrielleazevedo.wordpress.com/2011/06/08/usando-comandos-alter-table-update-e-delete/
