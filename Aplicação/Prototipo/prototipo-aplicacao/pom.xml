@@ -71,12 +71,12 @@
             <version>1.2.1</version>
         </dependency>
         
-          <dependency>
+<!--          <dependency>
             <groupId>unknown.binary</groupId>
             <artifactId>AbsoluteLayout</artifactId>
             <version>SNAPSHOT</version>
         </dependency>
-		
+		-->
 		<!-- https://mvnrepository.com/artifact/pengrad/java-telegram-bot-api -->
         <dependency>
           <groupId>com.github.pengrad</groupId>

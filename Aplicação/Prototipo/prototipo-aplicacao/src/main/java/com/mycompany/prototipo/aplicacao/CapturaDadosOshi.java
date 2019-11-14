@@ -7,9 +7,13 @@ package com.mycompany.prototipo.aplicacao;
 
 //import org.slf4j.Logger;
 //import org.slf4j.LoggerFactory;
-
+import com.profesorfalken.jsensors.JSensors;
+import com.profesorfalken.jsensors.model.components.Components;
+import com.profesorfalken.jsensors.model.components.Gpu;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import oshi.SystemInfo;
 import oshi.hardware.*;
 import oshi.software.os.*;
@@ -30,7 +34,10 @@ public class CapturaDadosOshi {
     String memoriaTotal;
     String memoriaDisp;
     String sistemaOperacional;
-   
+//parte Jsensors
+    Map<String, String> overridenConfig;
+    Components components;
+    List<Gpu> gpus;
 
     public CapturaDadosOshi() {
 
@@ -41,7 +48,12 @@ public class CapturaDadosOshi {
         memoriaTotal = FormatUtil.formatBytes(hal.getMemory().getTotal());
         memoriaDisp = FormatUtil.formatBytes(hal.getMemory().getAvailable());
         sistemaOperacional = si.getOperatingSystem().getFamily();
-        
+
+        //Jsensors
+        overridenConfig = new HashMap<String, String>();
+        overridenConfig.put("debugMode", "false");
+        components = JSensors.get.config(overridenConfig).components();
+
     }
 
     public String getHostname() {

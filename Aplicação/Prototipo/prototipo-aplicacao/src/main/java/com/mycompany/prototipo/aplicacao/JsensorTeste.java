@@ -18,18 +18,21 @@ import java.util.*;
  * @author gsramos
  */
 public class JsensorTeste {
-    
-        public static void main(String[] args) {
-
-
-        Map<String, String> overridenConfig = new HashMap<String, String>();
+  Map<String, String> overridenConfig;
+   Components components;
+  List<Gpu> gpus;
+    public JsensorTeste() {
+        overridenConfig = new HashMap<>();
         overridenConfig.put("debugMode", "false");
-
-        Components components = JSensors.get.config(overridenConfig).components();
-
-        List<Cpu> gpus = components.cpus;
-        if (gpus != null) {
-            for (final Cpu gpu : gpus) {
+        components = JSensors.get.config(overridenConfig).components();
+       
+    }
+    
+        
+        public void puxarGPU(){
+            gpus  = components.gpus;
+            if (gpus != null) {
+            for (final Gpu gpu : gpus) {
                 System.out.println("Found CPU component: " + gpu.name);
                 if (gpu.sensors != null) {
                     System.out.println("Sensors: ");
@@ -48,10 +51,20 @@ public class JsensorTeste {
                 }
             }
         }
+            return;
+            
+        }
+
+       
         
-            System.out.println("Terminou");
-            return ;
+
+        
+
+                 
+        
+        
+        
             
 
     }
-}
+
