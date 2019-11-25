@@ -1,0 +1,102 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css";
+    integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+    integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+<link rel="stylesheet" href="//malihu.github.io/custom-scrollbar/jquery.mCustomScrollbar.min.css">
+<link rel="stylesheet" href="css/main.css">
+<link rel="stylesheet" href="css/sidebar-themes.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.css">
+
+<div class="container shadow-lg p-3 mb-5 bg-white rounded">
+  <canvas class="overflow-auto" id="myChart" width="1000" height="400"></canvas>
+</div>
+<div class="container shadow-lg p-3 mb-5 bg-white rounded">
+  <div class="row d-flex justify-content-between align-self-center mr-3 ml-3">
+
+    <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
+      <a id="detalhes-cpu">
+        <div class="card-header">CPU <span class="badge badge-success">Okay</span></div>
+        <div class="card-body">
+          <h5 class="card-title">AMD Ryzen 7 1700 Octacore 3.0GHz</h5>
+          <p class="card-text">Último registro:</p>
+          <p class="card-text">Média de Consumo Diária:</p>
+        </div>
+      </a>
+    </div>
+
+    <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
+      <a id="detalhes-gpu">
+        <div class="card-header">GPU <span class="badge badge-success">Okay</span></div>
+        <div class="card-body">
+          <h5 class="card-title">Nvidia GeForce GTX 1080 8GB GDDR5</h5>
+          <p class="card-text">Último registro:</p>
+          <p class="card-text">Média de consumo Diário:</p>
+        </div>
+      </a>
+    </div>
+
+    <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
+      <a id="detalhes-ram">
+        <div class="card-header">RAM <span class="badge badge-warning">Atenção</span></div>
+        <div class="card-body">
+          <h5 class="card-title">HyperX 8GB 2400MHz DDR4</h5>
+          <p class="card-text">Último registro:</p>
+          <p class="card-text">Média de consumo Diário:</p>
+        </div>
+      </a>
+    </div>
+
+    <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
+      <a id="detalhes-armazenamento">
+        <div class="card-header">Armazenamento <span class="badge badge-danger">Pouco Espaço</span></div>
+        <div class="card-body">
+          <h5 class="card-title">HyperX SSD 480GB</h5>
+          <p class="card-text">Último registro:</p>
+          <p class="card-text">Média de consumo Diário:</p>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" charset="utf-8"></script>
+<script type="text/javascript">
+  var ctx = document.getElementById('myChart');
+  var myChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: ['Segunda', 'Terca', 'Quarta', 'Quinta', 'Sexta', 'Sábado', 'Domingo'],
+        datasets: [{
+            label: 'Média de consumo dos últimos 7 dias',
+            data: [90, 65, 37, 42, 68, 23, 70],
+            backgroundColor: [
+            'rgba(255, 99, 132, 0.2)',
+            'rgba(54, 162, 235, 0.2)',
+            'rgba(255, 206, 86, 0.2)',
+            'rgba(75, 192, 192, 0.2)',
+            'rgba(153, 102, 255, 0.2)',
+            'rgba(255, 159, 64, 0.2)',
+            'rgba(255, 99, 132, 0.2)'
+            ],
+            borderColor: [
+            'rgba(255, 99, 132, 1)',
+            'rgba(54, 162, 235, 1)',
+            'rgba(255, 206, 86, 1)',
+            'rgba(75, 192, 192, 1)',
+            'rgba(153, 102, 255, 1)',
+            'rgba(255, 159, 64, 1)'
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true
+                }
+            }]
+        }
+    }
+});
+</script>
