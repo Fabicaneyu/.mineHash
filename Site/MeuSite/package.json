@@ -19,6 +19,6 @@
     "nodemon": "^1.19.4",
     "passport-facebook": "^3.0.0",
     "popper.js": "^1.15.0",
-    "pug": "^2.0.4"
+    "pug": "^3.0.1"
   }
 }
